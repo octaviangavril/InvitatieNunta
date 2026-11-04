@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ștefana & Octavian · 22 mai 2027</title>
 <meta name="description" content="Invitație la cununia civilă a Ștefanei și a lui Octavian, 22 mai 2027, Lețcani, Iași.">
-<meta property="og:title" content="Ștefana & Octavian · Ne căsătorim!">
+<meta property="og:title" content="Ștefana & Octavian · Cununie civilă">
 <meta property="og:description" content="Vă invităm la cununia noastră civilă, sâmbătă, 22 mai 2027.">
 <meta name="theme-color" content="#8e6bbf">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,9 +161,6 @@ section{position:relative;padding:5.5rem 20px;max-width:980px;margin:0 auto}
 
 /* ---------- Invitația ---------- */
 .invite .lead p{margin:0 0 1.1rem}
-.quote{margin:2.4rem auto 0;max-width:560px;padding:2.8rem 1.6rem 1.8rem;text-align:center;font-style:italic;font-size:1.25rem;color:var(--lav-d);position:relative}
-.quote::before{content:"\201C";position:absolute;top:.9rem;left:50%;transform:translateX(-50%);font-family:var(--script);font-size:4rem;line-height:.6;color:var(--gold);font-style:normal}
-.quote cite{display:block;margin-top:.7rem;font-style:normal;font-family:var(--sans);font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
 
 /* ---------- Calendar ---------- */
 .cal{max-width:420px;margin:0 auto;padding:1.8rem 1.4rem 1.6rem}
@@ -246,6 +243,8 @@ fieldset.fld{border:0;margin:0;padding:0;min-width:0}
 .thanks svg{width:84px;height:84px}
 .thanks svg path{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .8s ease forwards .3s}
 .thanks h3{font-family:var(--script);font-weight:400;font-size:2.6rem;color:var(--lav-d);margin:.4rem 0 .2rem}
+.wa-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.wa-btns .btn{padding:.95rem 1.4rem}
 .note{text-align:center;font-size:1rem;color:var(--muted);margin-top:1rem}
 
 /* ---------- Final ---------- */
@@ -278,6 +277,8 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
   .cd small{font-size:.58rem;letter-spacing:.08em}
   .save .acts{flex-direction:column;align-items:center}
   .save .acts .btn{width:min(100%,290px)}
+  .wa-btns{flex-direction:column;align-items:center}
+  .wa-btns .btn{width:min(100%,290px)}
   .ev .ic{grid-column:1}
   .ev:nth-child(odd) .txt,.ev:nth-child(even) .txt{grid-column:2;text-align:left;padding-right:0}
 }
@@ -291,23 +292,13 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="gHeart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9a3dc"/><stop offset="1" stop-color="#5b3f8c"/></linearGradient>
-    <symbol id="sprig" viewBox="0 0 30 130">
-      <path d="M15 130 C15 100 14 70 15 16" stroke="#7f9a78" stroke-width="1.6" fill="none"/>
-      <path d="M15 104 q-11 -6 -13 -20 q10 6 13 20z" fill="#93ab8b"/>
-      <path d="M15 94 q11 -6 13 -20 q-10 6 -13 20z" fill="#a3b89c"/>
-      <g fill="#8e6bbf">
-        <ellipse cx="15" cy="14" rx="2.6" ry="4"/>
-        <ellipse cx="12" cy="21" rx="3" ry="4.4" transform="rotate(-20 12 21)" fill="#a587d3"/>
-        <ellipse cx="18" cy="24" rx="3" ry="4.4" transform="rotate(20 18 24)"/>
-        <ellipse cx="11.5" cy="30" rx="3.2" ry="4.6" transform="rotate(-22 11.5 30)"/>
-        <ellipse cx="18.5" cy="33" rx="3.2" ry="4.6" transform="rotate(22 18.5 33)" fill="#a587d3"/>
-        <ellipse cx="11" cy="40" rx="3.3" ry="4.8" transform="rotate(-24 11 40)" fill="#7a58ad"/>
-        <ellipse cx="19" cy="43" rx="3.3" ry="4.8" transform="rotate(24 19 43)"/>
-        <ellipse cx="11" cy="51" rx="3.2" ry="4.6" transform="rotate(-24 11 51)" fill="#a587d3"/>
-        <ellipse cx="19" cy="54" rx="3.2" ry="4.6" transform="rotate(24 19 54)" fill="#7a58ad"/>
-        <ellipse cx="11.5" cy="62" rx="2.8" ry="4" transform="rotate(-22 11.5 62)"/>
-        <ellipse cx="18.5" cy="65" rx="2.8" ry="4" transform="rotate(22 18.5 65)" fill="#a587d3"/>
-      </g>
+    <symbol id="floret" viewBox="-5 -5 10 10"><g><ellipse cx="0" cy="-2.4" rx="1.7" ry="2.4"/><ellipse cx="0" cy="2.4" rx="1.7" ry="2.4"/><ellipse cx="-2.4" cy="0" rx="2.4" ry="1.7"/><ellipse cx="2.4" cy="0" rx="2.4" ry="1.7"/></g><circle r=".9" fill="#fff8e7"/></symbol>
+    <symbol id="lilac" viewBox="0 0 40 130">
+      <path d="M20 130 C20 105 19 85 20 58" stroke="#6f8a69" stroke-width="2" fill="none"/>
+      <path d="M20 96 C14 92 4 94 3 102 C2 109 11 112 20 118 C17 110 21 102 20 96Z" fill="#8fa58a"/>
+      <path d="M20 84 C26 80 36 82 37 90 C38 97 29 100 20 106 C23 98 19 90 20 84Z" fill="#a3b89c"/>
+      <path d="M20 96 C14 98 8 102 12 107" stroke="#7f9a78" stroke-width=".6" fill="none"/>
+      <use href="#floret" x="16.3" y="9.1" width="6.5" height="6.5" fill="#b38bc9"/><use href="#floret" x="16.0" y="13.0" width="6.4" height="6.4" fill="#a97fc2"/><use href="#floret" x="17.7" y="12.7" width="6.4" height="6.4" fill="#c9a3d9"/><use href="#floret" x="13.5" y="17.2" width="7.0" height="7.0" fill="#b38bc9"/><use href="#floret" x="19.5" y="16.5" width="7.3" height="7.3" fill="#b38bc9"/><use href="#floret" x="13.2" y="21.5" width="6.9" height="6.9" fill="#b38bc9"/><use href="#floret" x="16.9" y="20.6" width="6.4" height="6.4" fill="#a97fc2"/><use href="#floret" x="19.2" y="21.3" width="6.8" height="6.8" fill="#c9a3d9"/><use href="#floret" x="11.2" y="23.8" width="7.2" height="7.2" fill="#b38bc9"/><use href="#floret" x="17.0" y="24.0" width="6.3" height="6.3" fill="#c9a3d9"/><use href="#floret" x="20.6" y="25.0" width="7.2" height="7.2" fill="#dcc2e8"/><use href="#floret" x="11.8" y="28.1" width="7.0" height="7.0" fill="#c9a3d9"/><use href="#floret" x="17.2" y="28.8" width="6.6" height="6.6" fill="#a97fc2"/><use href="#floret" x="21.5" y="28.5" width="6.8" height="6.8" fill="#a97fc2"/><use href="#floret" x="11.6" y="32.6" width="6.4" height="6.4" fill="#9d74b8"/><use href="#floret" x="13.5" y="31.5" width="7.1" height="7.1" fill="#e6d3ee"/><use href="#floret" x="17.5" y="33.0" width="7.2" height="7.2" fill="#9d74b8"/><use href="#floret" x="22.6" y="32.6" width="6.8" height="6.8" fill="#dcc2e8"/><use href="#floret" x="8.6" y="36.4" width="6.4" height="6.4" fill="#e6d3ee"/><use href="#floret" x="14.8" y="37.2" width="6.3" height="6.3" fill="#e6d3ee"/><use href="#floret" x="18.9" y="36.2" width="7.4" height="7.4" fill="#e6d3ee"/><use href="#floret" x="23.2" y="35.3" width="7.4" height="7.4" fill="#dcc2e8"/><use href="#floret" x="7.5" y="40.3" width="7.3" height="7.3" fill="#c9a3d9"/><use href="#floret" x="13.2" y="40.3" width="6.4" height="6.4" fill="#dcc2e8"/><use href="#floret" x="17.5" y="39.8" width="7.1" height="7.1" fill="#dcc2e8"/><use href="#floret" x="20.5" y="40.7" width="7.8" height="7.8" fill="#a97fc2"/><use href="#floret" x="24.5" y="40.2" width="6.9" height="6.9" fill="#dcc2e8"/><use href="#floret" x="8.5" y="44.1" width="6.5" height="6.5" fill="#c9a3d9"/><use href="#floret" x="12.6" y="45.6" width="6.2" height="6.2" fill="#c9a3d9"/><use href="#floret" x="16.3" y="44.7" width="6.2" height="6.2" fill="#9d74b8"/><use href="#floret" x="21.6" y="43.9" width="6.8" height="6.8" fill="#a97fc2"/><use href="#floret" x="26.8" y="44.8" width="7.4" height="7.4" fill="#dcc2e8"/><use href="#floret" x="6.5" y="48.9" width="7.6" height="7.6" fill="#a97fc2"/><use href="#floret" x="9.9" y="47.7" width="6.9" height="6.9" fill="#e6d3ee"/><use href="#floret" x="14.4" y="49.7" width="6.5" height="6.5" fill="#dcc2e8"/><use href="#floret" x="17.9" y="47.7" width="6.8" height="6.8" fill="#b38bc9"/><use href="#floret" x="23.0" y="49.3" width="7.2" height="7.2" fill="#a97fc2"/><use href="#floret" x="25.6" y="48.3" width="7.8" height="7.8" fill="#c9a3d9"/><use href="#floret" x="4.8" y="52.2" width="7.9" height="7.9" fill="#dcc2e8"/><use href="#floret" x="8.3" y="53.1" width="7.7" height="7.7" fill="#dcc2e8"/><use href="#floret" x="14.3" y="51.9" width="6.8" height="6.8" fill="#e6d3ee"/><use href="#floret" x="18.6" y="53.3" width="6.7" height="6.7" fill="#c9a3d9"/><use href="#floret" x="23.7" y="53.6" width="6.6" height="6.6" fill="#9d74b8"/><use href="#floret" x="27.1" y="51.5" width="7.2" height="7.2" fill="#a97fc2"/><use href="#floret" x="3.4" y="55.5" width="7.4" height="7.4" fill="#9d74b8"/><use href="#floret" x="8.6" y="55.8" width="7.8" height="7.8" fill="#c9a3d9"/><use href="#floret" x="13.8" y="55.9" width="7.6" height="7.6" fill="#c9a3d9"/><use href="#floret" x="19.0" y="56.7" width="7.6" height="7.6" fill="#c9a3d9"/><use href="#floret" x="24.4" y="56.6" width="7.7" height="7.7" fill="#c9a3d9"/><use href="#floret" x="28.2" y="56.9" width="7.1" height="7.1" fill="#b38bc9"/><use href="#floret" x="3.4" y="59.9" width="7.1" height="7.1" fill="#a97fc2"/><use href="#floret" x="8.4" y="61.4" width="7.0" height="7.0" fill="#9d74b8"/><use href="#floret" x="13.1" y="60.0" width="6.9" height="6.9" fill="#c9a3d9"/><use href="#floret" x="16.5" y="60.6" width="6.8" height="6.8" fill="#a97fc2"/><use href="#floret" x="21.9" y="60.8" width="7.1" height="7.1" fill="#e6d3ee"/><use href="#floret" x="24.5" y="61.1" width="7.4" height="7.4" fill="#e6d3ee"/><use href="#floret" x="30.8" y="59.8" width="7.1" height="7.1" fill="#e6d3ee"/><use href="#floret" x="16.5" y="5" width="7" height="7" fill="#dcc2e8"/>
     </symbol>
     <symbol id="rose" viewBox="0 0 40 40">
       <circle cx="20" cy="20" r="17" fill="#fff" stroke="#e7def3"/>
@@ -323,7 +314,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
 <!-- Plicul de deschidere -->
 <div id="envelope" role="dialog" aria-label="Invitație sigilată">
   <div class="env-hello">
-    <div class="to">O invitație pentru tine</div>
+    <div class="to">Invitație la cununia civilă</div>
     <div class="nm">Ștefana &amp; Octavian</div>
   </div>
   <div class="env" id="env">
@@ -341,7 +332,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
   <section class="hero" id="acasa">
     <div class="floating" id="floating" aria-hidden="true"></div>
     <div class="field" id="field" aria-hidden="true"></div>
-    <p class="kicker fade-up fu1">Ne căsătorim!</p>
+    <p class="kicker fade-up fu1">Cununie civilă</p>
     <div class="arch-wrap fade-up fu1">
       <svg class="arch-line" viewBox="0 0 300 400" preserveAspectRatio="none" aria-hidden="true">
         <path class="main" d="M6 396 V150 A144 144 0 0 1 294 150 V396 Z"/>
@@ -356,36 +347,36 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
         <use href="#heart" x="47" y="48" width="26" height="24" fill="url(#gHeart)"/>
       </svg>
       <svg class="bouquet l" viewBox="0 0 110 120" aria-hidden="true">
-        <use href="#sprig" x="20" y="0" width="30" height="120" transform="rotate(-14 35 120)"/>
-        <use href="#sprig" x="40" y="-6" width="30" height="126"/>
-        <use href="#sprig" x="58" y="4" width="30" height="116" transform="rotate(16 73 120)"/>
+        <use href="#lilac" x="20" y="0" width="30" height="120" transform="rotate(-14 35 120)"/>
+        <use href="#lilac" x="40" y="-6" width="30" height="126"/>
+        <use href="#lilac" x="58" y="4" width="30" height="116" transform="rotate(16 73 120)"/>
         <use href="#rose" x="34" y="78" width="26" height="26"/><use href="#rose" x="54" y="86" width="22" height="22"/>
       </svg>
       <svg class="bouquet r" viewBox="0 0 110 120" aria-hidden="true">
-        <use href="#sprig" x="22" y="4" width="30" height="116" transform="rotate(-16 37 120)"/>
-        <use href="#sprig" x="40" y="-6" width="30" height="126"/>
-        <use href="#sprig" x="60" y="0" width="30" height="120" transform="rotate(14 75 120)"/>
+        <use href="#lilac" x="22" y="4" width="30" height="116" transform="rotate(-16 37 120)"/>
+        <use href="#lilac" x="40" y="-6" width="30" height="126"/>
+        <use href="#lilac" x="60" y="0" width="30" height="120" transform="rotate(14 75 120)"/>
         <use href="#rose" x="50" y="78" width="26" height="26"/><use href="#rose" x="34" y="86" width="22" height="22"/>
       </svg>
     </div>
     <h1 class="names"><span class="w n1"><span class="shimmer">Ștefana</span></span><span class="amp">&amp;</span><span class="w n2"><span class="shimmer">Octavian</span></span></h1>
     <p class="hero-date fade-up fu2">22 · 05 · 2027</p>
-    <p class="hero-sub fade-up fu3">Cununie civilă · Iași</p>
+    <p class="hero-sub fade-up fu3">Ne spunem „Da” la Lețcani, Iași</p>
     <a class="scroll-hint fade-up fu4" href="#invitatie"><span class="mouse"></span>Derulează</a>
   </section>
 
   <!-- Invitația -->
   <section class="invite" id="invitatie">
     <p class="eyebrow reveal">Dragii noștri</p>
-    <h2 class="title reveal">Vă invităm cu drag</h2>
+    <h2 class="title reveal">Vă invităm la cununia noastră civilă</h2>
     <div class="lead reveal" style="--d:.15s">
       <p>Pentru că cele mai frumoase momente sunt cele împărtășite cu cei dragi, vă invităm cu bucurie să fiți alături de noi în ziua în care ne unim destinele.</p>
-      <p>Vom spune „Da” în fața ofițerului de stare civilă și ne-am bucura nespus să sărbătorim apoi împreună cu voi.</p>
+      <p>Ne vom spune „Da” în fața ofițerului de stare civilă, într-un cadru restrâns, și ne-am bucura nespus să sărbătorim apoi împreună cu voi.</p>
+      <p>Nunta cea mare va veni mai târziu. Acum vă invităm la primul nostru „Da”, cel civil.</p>
     </div>
-    <blockquote class="quote card reveal" style="--d:.3s">Iubirea nu înseamnă să ne privim unul pe altul, ci să privim împreună în aceeași direcție.<cite>Antoine de Saint-Exupéry</cite></blockquote>
   </section>
 
-  <div class="divider reveal" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><use href="#sprig" x="2" y="-20" width="20" height="80" transform="rotate(-70 12 20)"/><use href="#heart" x="26" y="7" width="18" height="17" fill="url(#gHeart)"/><use href="#sprig" x="48" y="-20" width="20" height="80" transform="rotate(70 58 20)"/></svg><span></span></div>
+  <div class="divider reveal" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><use href="#lilac" x="2" y="-20" width="20" height="80" transform="rotate(-70 12 20)"/><use href="#heart" x="26" y="7" width="18" height="17" fill="url(#gHeart)"/><use href="#lilac" x="48" y="-20" width="20" height="80" transform="rotate(70 58 20)"/></svg><span></span></div>
 
   <!-- Data -->
   <section id="data">
@@ -394,14 +385,14 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
     <div class="cal card reveal" style="--d:.15s">
       <div class="cal-head"><small>2027</small>Mai</div>
       <div class="cal-grid" id="calGrid"></div>
-      <div class="cal-foot">Cununia civilă începe la ora <b data-ora="cununie">13:00</b></div>
+      <div class="cal-foot">Cununia civilă începe la ora <b data-ora="cununie">14:30</b></div>
     </div>
   </section>
 
   <!-- Numărătoare inversă -->
   <section id="numaratoare">
     <p class="eyebrow reveal">Numărăm clipele</p>
-    <h2 class="title reveal">Până la marele „Da”</h2>
+    <h2 class="title reveal">Până la „Da”-ul nostru</h2>
     <div class="cd reveal" id="cd" style="--d:.15s">
       <div class="u card"><span class="num" data-k="d">0</span><small>Zile</small></div>
       <div class="u card"><span class="num" data-k="h">0</span><small>Ore</small></div>
@@ -418,11 +409,11 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
       <div class="fill"></div>
       <div class="ev reveal">
         <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#8e6bbf" stroke-width="2"><circle cx="18" cy="28" r="11"/><circle cx="30" cy="28" r="11" stroke="#b8975a"/><path d="M15 12l3-5 3 5" stroke="#b8975a"/><path d="M14 12h8" stroke="#b8975a"/></svg></div>
-        <div class="txt"><div class="time" data-ora="cununie">13:00</div><h3>Cununia civilă</h3><p>Primăria Lețcani<br>Ne spunem „Da” în fața celor dragi</p></div>
+        <div class="txt"><div class="time" data-ora="cununie">14:30</div><h3>Cununia civilă</h3><p>Primăria Lețcani<br>Ne spunem „Da” în fața ofițerului de stare civilă</p></div>
       </div>
       <div class="ev reveal">
         <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#8e6bbf" stroke-width="2" stroke-linecap="round"><path d="M10 8h10l-1 11a4 4 0 0 1-8 0z"/><path d="M15 23v15M11 38h8"/><path d="M28 8h10l-1 11a4 4 0 0 1-8 0z" stroke="#b8975a"/><path d="M33 23v15M29 38h8" stroke="#b8975a"/><path d="M22 5l2-3M24 7l4-2" stroke="#b8975a"/></svg></div>
-        <div class="txt"><div class="time" data-ora="petrecere">18:00</div><h3>Petrecerea</h3><p>Restaurant Crystal, Sala Diamant<br>Sărbătorim împreună până în zori</p></div>
+        <div class="txt"><div class="time" data-ora="petrecere">16:00</div><h3>Petrecerea</h3><p>Restaurant Crystal, Sala Diamant<br>Ridicăm un pahar și ne bucurăm de o seară frumoasă împreună</p></div>
       </div>
     </div>
   </section>
@@ -437,7 +428,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
         <div class="tag">Cununia civilă</div>
         <h3>Primăria Lețcani</h3>
         <p class="where">Lețcani, județul Iași</p>
-        <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="cununie">13:00</span></p>
+        <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="cununie">14:30</span></p>
         <div class="map"><iframe loading="lazy" title="Harta Primăria Lețcani" src="https://maps.google.com/maps?q=Prim%C4%83ria%20Le%C8%9Bcani%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="acts">
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Prim%C4%83ria%20Le%C8%9Bcani%2C%20Ia%C8%99i"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Google Maps</a>
@@ -449,7 +440,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
         <div class="tag">Petrecerea</div>
         <h3>Restaurant Crystal</h3>
         <p class="where">Sala Diamant · Valea Lupului, județul Iași</p>
-        <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="petrecere">18:00</span></p>
+        <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="petrecere">16:00</span></p>
         <div class="map"><iframe loading="lazy" title="Harta Restaurant Crystal" src="https://maps.google.com/maps?q=Restaurant%20Crystal%2C%20Valea%20Lupului%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="acts">
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Crystal%2C%20Valea%20Lupului%2C%20Ia%C8%99i"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Google Maps</a>
@@ -475,7 +466,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
   <section id="rsvp">
     <p class="eyebrow reveal">Confirmare</p>
     <h2 class="title reveal">Ne veți fi alături?</h2>
-    <p class="lead reveal">Vă rugăm să ne confirmați prezența cât mai curând. Mesajul se trimite pe WhatsApp, gata scris.</p>
+    <p class="lead reveal">Vă rugăm să ne confirmați prezența cât mai curând. Mesajul se trimite pe WhatsApp, gata scris, Ștefanei sau lui Octavian.</p>
     <div class="rsvp card reveal" style="--d:.15s;margin-top:1.8rem" id="rsvpCard">
       <form id="rsvpForm" novalidate>
         <div class="fld">
@@ -498,12 +489,15 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
           <label for="mentiuni">Mențiuni (meniu vegetarian, alergii, copii)</label>
           <textarea id="mentiuni" name="mentiuni" rows="3" placeholder="Opțional"></textarea>
         </div>
-        <button class="btn" type="submit" style="align-self:center;padding:.95rem 1.6rem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>Trimite pe WhatsApp</button>
+        <div class="wa-btns">
+          <button class="btn" type="submit" data-to="mireasa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>Trimite Ștefanei</button>
+          <button class="btn" type="submit" data-to="mire"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>Trimite lui Octavian</button>
+        </div>
       </form>
     </div>
   </section>
 
-  <div class="divider reveal" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><use href="#sprig" x="2" y="-20" width="20" height="80" transform="rotate(-70 12 20)"/><use href="#heart" x="26" y="7" width="18" height="17" fill="url(#gHeart)"/><use href="#sprig" x="48" y="-20" width="20" height="80" transform="rotate(70 58 20)"/></svg><span></span></div>
+  <div class="divider reveal" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><use href="#lilac" x="2" y="-20" width="20" height="80" transform="rotate(-70 12 20)"/><use href="#heart" x="26" y="7" width="18" height="17" fill="url(#gHeart)"/><use href="#lilac" x="48" y="-20" width="20" height="80" transform="rotate(70 58 20)"/></svg><span></span></div>
 
   <!-- Final -->
   <section class="finale" id="final">
@@ -515,18 +509,18 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
   </section>
 </main>
 
-<footer>ȘTEFANA &amp; OCTAVIAN · 22.05.2027 · IAȘI</footer>
+<footer>CUNUNIA CIVILĂ · ȘTEFANA &amp; OCTAVIAN · 22.05.2027 · IAȘI</footer>
 
 <button class="music" id="music" aria-label="Pornește sau oprește muzica"><i></i><i></i><i></i><i></i></button>
 
 <script>
-/* Datele de editat: orele, numărul de WhatsApp (cu prefixul țării, fără +) */
+/* Datele de editat: orele, numerele de WhatsApp (cu prefixul țării, fără +) */
 const CONFIG = {
   data: '2027-05-22',
   fus: '+03:00',
-  cununie: { ora: '13:00', durata: 1, titlu: 'Cununia civilă Ștefana & Octavian', loc: 'Primăria Lețcani, județul Iași' },
-  petrecere: { ora: '18:00', durata: 10, titlu: 'Petrecerea Ștefana & Octavian', loc: 'Restaurant Crystal, Sala Diamant, Valea Lupului, județul Iași' },
-  whatsapp: '40751370116'
+  cununie: { ora: '14:30', durata: 1, titlu: 'Cununia civilă Ștefana & Octavian', loc: 'Primăria Lețcani, județul Iași' },
+  petrecere: { ora: '16:00', durata: 7, titlu: 'Petrecerea Ștefana & Octavian', loc: 'Restaurant Crystal, Sala Diamant, Valea Lupului, județul Iași' },
+  whatsapp: { mireasa: '40786895272', mire: '40751370116' }
 };
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -546,7 +540,7 @@ function resize() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 resize(); addEventListener('resize', resize);
-const PCOL = ['#b9a3dc', '#9c7fcc', '#d8ccef', '#ffffff', '#f4eefb', '#c7b3e6', '#ffffff'];
+const PCOL = ['#c9a3d9', '#b38bc9', '#dcc2e8', '#ffffff', '#efe3f5', '#a97fc2', '#ffffff'];
 const CCOL = ['#8e6bbf', '#b9a3dc', '#e3cf9f', '#b8975a', '#ffffff', '#a3b89c'];
 const petals = [], sparks = [], confetti = [];
 const rnd = (a, b) => a + Math.random() * (b - a);
@@ -571,12 +565,13 @@ function burst(x, y, n = 80) {
 const heartPath = new Path2D('M0 6S-7 1.8-7-3.2C-7-5.7-5.1-7.5-3-7.5c1.4 0 2.4.7 3 1.8.6-1.1 1.6-1.8 3-1.8 2.1 0 4 1.8 4 4.3C7 1.8 0 6 0 6z');
 function drawPetal(p) {
   ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.scale(1, Math.abs(Math.cos(p.fl)) * .8 + .2);
-  const s = p.s;
-  ctx.beginPath(); ctx.moveTo(0, -s);
-  ctx.bezierCurveTo(s * .9, -s * .5, s * .6, s * .8, 0, s);
-  ctx.bezierCurveTo(-s * .6, s * .8, -s * .9, -s * .5, 0, -s);
-  ctx.fillStyle = p.c; ctx.globalAlpha = .9; ctx.fill();
-  ctx.strokeStyle = 'rgba(142,107,191,.25)'; ctx.lineWidth = .8; ctx.stroke();
+  const s = p.s * .55;
+  ctx.fillStyle = p.c; ctx.globalAlpha = .92;
+  ctx.strokeStyle = 'rgba(142,107,191,.3)'; ctx.lineWidth = .6;
+  for (let k = 0; k < 4; k++) {
+    ctx.beginPath(); ctx.ellipse(0, -s * .62, s * .42, s * .62, 0, 0, 6.29); ctx.fill(); ctx.stroke(); ctx.rotate(Math.PI / 2);
+  }
+  ctx.beginPath(); ctx.arc(0, 0, s * .2, 0, 6.29); ctx.fillStyle = '#fff3d6'; ctx.fill();
   ctx.restore();
 }
 function drawStar(x, y, r) {
@@ -723,9 +718,9 @@ if (location.hash === '#deschis') { envEl.remove(); reveal(); }
   const field = $('#field'), n = W < 600 ? 16 : 30;
   for (let i = 0; i < n; i++) {
     const h = rnd(70, 150), s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    s.setAttribute('viewBox', '0 0 30 130');
-    s.style.cssText = `left:${(i / n) * 100 + rnd(-2, 2)}%;height:${h}px;width:${h * .23}px;--r:${rnd(-8, 8)}deg;animation-delay:${rnd(-4, 0)}s;animation-duration:${rnd(3.5, 5.5)}s;opacity:${rnd(.55, 1)}`;
-    s.innerHTML = '<use href="#sprig"/>';
+    s.setAttribute('viewBox', '0 0 40 130');
+    s.style.cssText = `left:${(i / n) * 100 + rnd(-2, 2)}%;height:${h}px;width:${h * .31}px;--r:${rnd(-8, 8)}deg;animation-delay:${rnd(-4, 0)}s;animation-duration:${rnd(3.5, 5.5)}s;opacity:${rnd(.55, 1)}`;
+    s.innerHTML = '<use href="#lilac"/>';
     field.appendChild(s);
   }
   const fl = $('#floating');
@@ -812,18 +807,19 @@ addEventListener('scroll', onScroll, { passive: true }); onScroll();
   f.addEventListener('change', () => { $('#persBox').hidden = f.vine.value === 'nu'; });
   f.addEventListener('submit', e => {
     e.preventDefault();
+    const to = CONFIG.whatsapp[(e.submitter && e.submitter.dataset.to) || 'mireasa'];
     const nume = f.nume.value.trim(), ment = f.mentiuni.value.trim(), da = f.vine.value === 'da';
     if (!nume) { $('#numeErr').hidden = false; f.nume.classList.remove('shake'); void f.nume.offsetWidth; f.nume.classList.add('shake'); f.nume.focus(); return; }
     $('#numeErr').hidden = true;
     const msg = da
       ? `Bună, Ștefana și Octavian! Sunt ${nume} și confirm cu drag prezența la cununia voastră civilă din 22 mai 2027. Număr de persoane: ${n}.` + (ment ? `\nMențiuni: ${ment}` : '')
       : `Bună, Ștefana și Octavian! Sunt ${nume}. Din păcate nu voi putea fi alături de voi pe 22 mai 2027, dar vă doresc tot binele din lume!` + (ment ? `\n${ment}` : '');
-    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/${to}?text=${encodeURIComponent(msg)}`, '_blank');
     const r = $('#rsvpCard').getBoundingClientRect();
     burst(r.left + r.width / 2, r.top + r.height / 2, da ? 110 : 40);
     $('#rsvpCard').innerHTML = `<div class="thanks"><svg viewBox="0 0 84 84" fill="none"><circle cx="42" cy="42" r="38" stroke="#e3cf9f" stroke-width="2"/><path d="M26 43l11 11 22-24" stroke="#8e6bbf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3>${da ? 'Mulțumim!' : 'Vă mulțumim!'}</h3><p class="lead">${da ? 'Abia așteptăm să sărbătorim împreună!' : 'Ne veți lipsi, dar vă purtăm în gând.'}</p>
-      <p class="note">Dacă WhatsApp nu s-a deschis, <a href="https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">apăsați aici</a>.</p></div>`;
+      <p class="note">Dacă WhatsApp nu s-a deschis, <a href="https://wa.me/${to}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">apăsați aici</a>.</p></div>`;
   });
 })();
 
