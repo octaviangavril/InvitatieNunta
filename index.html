@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ștefana & Octavian · 22 mai 2027</title>
+<meta name="description" content="Invitație la cununia civilă a Ștefanei și a lui Octavian, 22 mai 2027, Lețcani, Iași.">
+<meta property="og:title" content="Ștefana & Octavian · Ne căsătorim!">
+<meta property="og:description" content="Vă invităm la cununia noastră civilă, sâmbătă, 22 mai 2027.">
+<meta name="theme-color" content="#8e6bbf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lav:#8e6bbf; --lav-d:#5b3f8c; --lav-m:#b9a3dc; --lav-l:#efe8f8;
+  --ivory:#fdfbf7; --paper:#fffdf9; --sage:#8fa58a; --sage-d:#6f8a69;
+  --gold:#b8975a; --gold-l:#e3cf9f; --ink:#3d2f52; --muted:#6e6280;
+  --script:'Great Vibes', 'Brush Script MT', cursive;
+  --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:'Jost', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.6;overflow-x:hidden;font-variant-numeric:lining-nums}
+body.locked{overflow:hidden;height:100svh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(60vmax 50vmax at 0% 0%, rgba(185,163,220,.28), transparent 60%),
+    radial-gradient(50vmax 45vmax at 100% 30%, rgba(143,165,138,.16), transparent 60%),
+    radial-gradient(60vmax 50vmax at 30% 100%, rgba(185,163,220,.22), transparent 60%),
+    var(--ivory)}
+img{max-width:100%;display:block}
+a{color:inherit}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--lav-m),var(--gold),var(--lav));z-index:70}
+
+/* ---------- Plicul ---------- */
+#envelope{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;padding:24px;
+  background:radial-gradient(circle at 50% 40%, #f7f2fc 0%, #e6dbf3 55%, #cdbbe6 100%);
+  transition:opacity 1.1s ease, transform 1.1s ease, filter 1.1s ease}
+#envelope.gone{opacity:0;transform:scale(1.12);filter:blur(6px);pointer-events:none}
+.env-hello{text-align:center;color:var(--lav-d)}
+.env-hello .to{font-family:var(--sans);letter-spacing:.35em;text-transform:uppercase;font-size:.72rem;opacity:.8}
+.env-hello .nm{font-family:var(--script);font-size:clamp(2.4rem,9vw,3.4rem);line-height:1.1;margin-top:.3rem}
+.env{position:relative;width:min(86vw,440px);aspect-ratio:1.45;perspective:1400px;cursor:pointer;
+  animation:floaty 4s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+.env-back{position:absolute;inset:0;border-radius:10px;background:linear-gradient(160deg,#cdbbe6,#b49ad8);box-shadow:0 25px 50px -18px rgba(70,40,110,.55)}
+.letter{position:absolute;left:6%;right:6%;top:7%;height:86%;z-index:2;border-radius:8px;background:var(--paper);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;text-align:center;
+  box-shadow:0 4px 12px rgba(60,30,90,.18);transition:transform 1.3s cubic-bezier(.2,.8,.2,1)}
+.letter::before{content:"";position:absolute;inset:8px;border:1px solid var(--gold-l);border-radius:5px}
+.letter .l-names{font-family:var(--script);font-size:clamp(1.6rem,6.5vw,2.3rem);color:var(--lav-d);line-height:1.1}
+.letter .l-date{font-family:var(--sans);letter-spacing:.3em;font-size:.72rem;color:var(--gold)}
+.pocket{position:absolute;inset:0;z-index:3;border-radius:10px;
+  background:linear-gradient(180deg,#e3d7f2,#d3c3ea);
+  clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.pocket::after{content:"";position:absolute;inset:0;background:linear-gradient(20deg,rgba(255,255,255,.0) 40%,rgba(255,255,255,.35) 50%,rgba(255,255,255,0) 60%)}
+.flap-wrap{position:absolute;left:0;right:0;top:0;height:62%;z-index:4;transform-origin:50% 0;transform-style:preserve-3d;
+  filter:drop-shadow(0 6px 6px rgba(60,30,90,.22));
+  transition:transform 1s cubic-bezier(.5,0,.2,1), z-index 0s linear .45s}
+.flap{position:absolute;inset:0;border-radius:10px 10px 0 0;background:linear-gradient(180deg,#d8c9ee,#c2acdf);clip-path:polygon(0 0,100% 0,50% 100%)}
+.seal{position:absolute;left:50%;top:62%;width:84px;height:84px;margin:-42px 0 0 -42px;z-index:5;border:0;padding:0;background:none;cursor:pointer}
+.seal .half{position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#9b74cf,#5b3f8c 60%,#3f2a66);
+  box-shadow:0 4px 10px rgba(40,20,70,.45), inset 0 0 0 5px rgba(255,255,255,.08), inset 0 0 0 7px rgba(0,0,0,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--script);font-size:2.1rem;color:var(--gold-l);text-shadow:0 1px 1px rgba(0,0,0,.35);
+  transition:transform .9s cubic-bezier(.3,.7,.3,1), opacity .9s ease}
+.seal .h1{clip-path:polygon(0 0,52% 0,46% 35%,55% 60%,47% 100%,0 100%)}
+.seal .h2{clip-path:polygon(52% 0,100% 0,100% 100%,47% 100%,55% 60%,46% 35%)}
+.seal::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid rgba(255,255,255,.7);animation:ping 1.8s ease-out infinite}
+@keyframes ping{from{transform:scale(.8);opacity:.9}to{transform:scale(1.35);opacity:0}}
+.env-tap{font-family:var(--sans);font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;color:var(--lav-d);animation:blink 2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+.env-hello,.env-tap{transition:opacity .4s ease}
+#envelope.busy .env-hello,#envelope.busy .env-tap{opacity:0;animation:none}
+.opening .seal::after{display:none}
+.opening .seal .h1{transform:translate(-60px,40px) rotate(-35deg);opacity:0}
+.opening .seal .h2{transform:translate(60px,40px) rotate(35deg);opacity:0}
+.opening .flap-wrap{transform:rotateX(180deg);z-index:1}
+.opening.env{animation:none}
+.letter-out .letter{transform:translateY(-58%) scale(1.04)}
+
+/* ---------- Comune ---------- */
+section{position:relative;padding:5.5rem 20px;max-width:980px;margin:0 auto}
+.eyebrow{font-family:var(--sans);font-weight:400;font-size:.74rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);text-align:center;margin:0 0 .6rem}
+.title{font-family:var(--script);font-weight:400;color:var(--lav-d);font-size:clamp(2.6rem,9vw,3.8rem);line-height:1.1;text-align:center;margin:0 0 1.6rem}
+.lead{text-align:center;max-width:620px;margin:0 auto;font-size:1.22rem;color:var(--ink)}
+.card{background:rgba(255,255,255,.72);border:1px solid rgba(184,151,90,.35);border-radius:24px;
+  box-shadow:0 18px 40px -24px rgba(91,63,140,.45), inset 0 0 0 6px rgba(255,255,255,.6), inset 0 0 0 7px rgba(184,151,90,.18);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto;max-width:360px;padding:0 20px}
+.divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider span:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.divider svg{width:70px;height:34px;flex:none}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity 1s ease, transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:0;cursor:pointer;text-decoration:none;
+  font-family:var(--sans);font-size:.86rem;letter-spacing:.08em;padding:.8rem 1.25rem;border-radius:999px;
+  background:linear-gradient(135deg,var(--lav),var(--lav-d));color:#fff;box-shadow:0 10px 20px -10px rgba(91,63,140,.8);
+  transition:transform .25s ease, box-shadow .25s ease;position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:shine 4s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 26px -10px rgba(91,63,140,.9)}
+.btn.ghost{background:#fff;color:var(--lav-d);border:1px solid var(--lav-m);box-shadow:none}
+.btn.ghost::after{display:none}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100svh;max-width:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4.5rem 20px 9rem;overflow:hidden}
+.kicker{font-family:var(--sans);letter-spacing:.45em;text-transform:uppercase;font-size:.78rem;color:var(--lav-d);margin:0 0 1.6rem}
+.arch-wrap{position:relative;width:min(74vw,350px);aspect-ratio:3/4;margin:0 auto}
+.arch{position:absolute;inset:0;border-radius:999px 999px 16px 16px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(70,40,110,.6)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;animation:kenburns 18s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.12) translateY(-2%)}}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0) 60%,rgba(91,63,140,.25))}
+.arch-line{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);overflow:visible;pointer-events:none}
+.arch-line path{fill:none;stroke:var(--gold);stroke-width:1.4;stroke-dasharray:1400;stroke-dashoffset:1400}
+.arch-line path.thin{stroke-width:.8;stroke:var(--lav-m);stroke-dasharray:4 6;stroke-dashoffset:0;opacity:0;transition:opacity 2s ease 2s}
+.opened .arch-line path.main{animation:draw 3.2s ease forwards .6s}
+.opened .arch-line path.thin{opacity:1}
+@keyframes draw{to{stroke-dashoffset:0}}
+.badge{position:absolute;right:-30px;top:12%;width:108px;height:108px;animation:spin 22s linear infinite}
+.badge text{font-family:var(--sans);font-size:9.6px;letter-spacing:2.6px;fill:var(--lav-d)}
+.badge .heart{font-size:26px;fill:var(--lav);letter-spacing:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bouquet{position:absolute;bottom:-26px;width:110px;height:120px;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite}
+.bouquet.l{left:-44px;--r:-18deg}
+.bouquet.r{right:-44px;--r:18deg;animation-delay:-2.5s}
+@keyframes sway{0%,100%{transform:rotate(calc(var(--r) - 3deg))}50%{transform:rotate(calc(var(--r) + 3deg))}}
+.names{margin:2.2rem 0 .4rem;font-family:var(--script);font-weight:400;line-height:1;font-size:clamp(3.4rem,15vw,6rem);color:var(--lav-d)}
+.names span{display:block}
+.names .w{clip-path:inset(-60% 100% -60% -20%);transition:clip-path 2.2s cubic-bezier(.6,.1,.3,1)}
+.names .amp{font-size:.6em;color:var(--gold);opacity:0;transform:scale(.4) rotate(-20deg);transition:all 1s cubic-bezier(.3,1.6,.5,1) 1.6s;margin:.05em 0}
+.opened .names .w{clip-path:inset(-60% -20% -60% -20%)}
+.opened .names .n2{transition-delay:1.9s}
+.opened .names .n1{transition-delay:.5s}
+.opened .names .amp{opacity:1;transform:none}
+.shimmer{background:linear-gradient(100deg,var(--lav-d) 40%,var(--gold) 50%,var(--lav-d) 60%);background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite;display:inline-block;padding:.3em .35em;margin:-.3em -.35em}
+@keyframes shimmer{from{background-position:100% 0}to{background-position:-200% 0}}
+.hero-date{font-family:var(--serif);font-size:1.5rem;letter-spacing:.3em;color:var(--ink);margin:.6rem 0 0}
+.hero-sub{font-family:var(--sans);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:.4rem 0 0}
+.fade-up{opacity:0;transform:translateY(16px);transition:all 1.2s ease}
+.opened .fade-up{opacity:1;transform:none}
+.opened .fu1{transition-delay:.2s}.opened .fu2{transition-delay:3s}.opened .fu3{transition-delay:3.4s}.opened .fu4{transition-delay:4s}
+.field{position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none;z-index:-1}
+.field svg{position:absolute;bottom:-6px;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite}
+.floating{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.floating i{position:absolute;bottom:-40px;font-style:normal;color:var(--lav-m);animation:rise linear infinite;opacity:0}
+@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.8}100%{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+.scroll-hint{margin-top:1.8rem;display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lav-d);text-decoration:none}
+.mouse{width:24px;height:38px;border:1.5px solid var(--lav-d);border-radius:14px;position:relative}
+.mouse::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--lav-d);animation:wheel 1.8s ease infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* ---------- Invitația ---------- */
+.invite .lead p{margin:0 0 1.1rem}
+.quote{margin:2.4rem auto 0;max-width:560px;padding:2.8rem 1.6rem 1.8rem;text-align:center;font-style:italic;font-size:1.25rem;color:var(--lav-d);position:relative}
+.quote::before{content:"\201C";position:absolute;top:.9rem;left:50%;transform:translateX(-50%);font-family:var(--script);font-size:4rem;line-height:.6;color:var(--gold);font-style:normal}
+.quote cite{display:block;margin-top:.7rem;font-style:normal;font-family:var(--sans);font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- Calendar ---------- */
+.cal{max-width:420px;margin:0 auto;padding:1.8rem 1.4rem 1.6rem}
+.cal-head{text-align:center;font-family:var(--serif);font-size:1.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--lav-d);margin-bottom:1rem}
+.cal-head small{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.35em;color:var(--gold)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-family:var(--sans);font-size:.92rem}
+.cal-grid .dn{font-size:.66rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;padding-bottom:4px}
+.cal-grid .d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--muted);position:relative}
+.cal-grid .d.big{color:#fff;font-weight:500;z-index:1}
+.cal-grid .d.big svg{position:absolute;inset:-28%;width:156%;height:156%;z-index:-1;animation:beat 1.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.15)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+.cal-foot{text-align:center;margin-top:1rem;font-size:1.15rem;color:var(--ink)}
+.cal-foot b{font-weight:600;color:var(--lav-d)}
+
+/* ---------- Numărătoare ---------- */
+.cd{display:flex;justify-content:center;gap:clamp(8px,3vw,22px);flex-wrap:wrap}
+.cd .u{width:clamp(70px,20vw,120px);padding:1.1rem .4rem .9rem;text-align:center;perspective:400px}
+.cd .num{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(2rem,8vw,3.3rem);line-height:1;color:var(--lav-d)}
+.cd .num.tick{animation:flip .6s cubic-bezier(.3,1.4,.5,1)}
+@keyframes flip{from{transform:rotateX(-90deg);opacity:.2}to{transform:none;opacity:1}}
+.cd small{display:block;margin-top:.5rem;font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.cd-done{text-align:center;font-family:var(--script);font-size:2.6rem;color:var(--lav-d)}
+
+/* ---------- Program ---------- */
+.tl{position:relative;max-width:620px;margin:0 auto;padding:.5rem 0}
+.tl::before,.tl .fill{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--lav-l)}
+.tl .fill{background:linear-gradient(var(--lav-m),var(--gold));transform-origin:50% 0;transform:scaleY(var(--p,0))}
+.ev{position:relative;display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;margin:1.4rem 0}
+.ev .ic{grid-column:2;width:64px;height:64px;border-radius:50%;background:#fff;border:1px solid var(--gold-l);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 7px var(--ivory), 0 10px 22px -10px rgba(91,63,140,.6);z-index:1}
+.ev .ic svg{width:34px;height:34px}
+.ev .txt{padding:0 1.2rem}
+.ev .time{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--lav-d);line-height:1}
+.ev h3{margin:.25rem 0 .1rem;font-family:var(--serif);font-weight:600;font-size:1.35rem}
+.ev p{margin:0;color:var(--muted);font-size:1.05rem;line-height:1.4}
+.ev:nth-child(odd) .txt{grid-column:1;grid-row:1;text-align:right}
+.ev:nth-child(even) .txt{grid-column:3;grid-row:1}
+.ev .ic{grid-row:1}
+
+/* ---------- Locații ---------- */
+.locs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.loc{padding:1.8rem 1.4rem 1.4rem;text-align:center;display:flex;flex-direction:column;gap:.5rem;transition:transform .35s ease}
+.loc:hover{transform:translateY(-6px)}
+.loc .pin{width:58px;height:58px;margin:0 auto .3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--lav-l)}
+.loc .pin svg{width:30px;height:30px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.loc .tag{font-family:var(--sans);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.loc h3{margin:0;font-family:var(--script);font-weight:400;font-size:2.3rem;color:var(--lav-d);line-height:1.1}
+.loc .where{margin:0;font-size:1.12rem}
+.loc .when{margin:0;font-family:var(--sans);font-size:.85rem;letter-spacing:.12em;color:var(--muted)}
+.loc .map{margin:.6rem 0 .4rem;border-radius:16px;overflow:hidden;height:180px;background:var(--lav-l);border:1px solid var(--gold-l)}
+.loc .map iframe{width:100%;height:100%;border:0;filter:saturate(.75) hue-rotate(-8deg)}
+.loc .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- Calendar personal ---------- */
+.save{text-align:center}
+.save .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:1.4rem}
+
+/* ---------- RSVP ---------- */
+.rsvp{max-width:560px;margin:0 auto;padding:2rem 1.5rem}
+.rsvp form{display:flex;flex-direction:column;gap:1.1rem}
+.fld label,.fld legend{display:block;font-family:var(--sans);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lav-d);margin-bottom:.45rem;padding:0}
+.fld input[type=text],.fld textarea{width:100%;font:inherit;font-size:1.1rem;color:var(--ink);padding:.75rem 1rem;border-radius:14px;border:1px solid var(--lav-m);background:#fff;outline:none;transition:border-color .2s, box-shadow .2s}
+.fld input[type=text]:focus,.fld textarea:focus{border-color:var(--lav);box-shadow:0 0 0 4px rgba(142,107,191,.18)}
+fieldset.fld{border:0;margin:0;padding:0;min-width:0}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice label{margin:0;cursor:pointer}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice span{display:flex;align-items:center;justify-content:center;gap:.4rem;text-align:center;min-height:52px;padding:.5rem;border-radius:14px;border:1px solid var(--lav-m);background:#fff;
+  font-family:var(--serif);font-size:1.1rem;letter-spacing:0;text-transform:none;color:var(--ink);transition:all .25s}
+.choice input:checked+span{background:linear-gradient(135deg,var(--lav),var(--lav-d));border-color:transparent;color:#fff;transform:scale(1.02)}
+.choice input:focus-visible+span{box-shadow:0 0 0 4px rgba(142,107,191,.3)}
+.stepper{display:flex;align-items:center;gap:14px}
+.stepper button{width:44px;height:44px;border-radius:50%;border:1px solid var(--lav-m);background:#fff;color:var(--lav-d);font-size:1.4rem;cursor:pointer;line-height:1}
+.stepper output{font-family:var(--serif);font-size:1.8rem;min-width:2ch;text-align:center;color:var(--lav-d)}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.err{color:#b2475b;font-family:var(--sans);font-size:.8rem;margin-top:.35rem}
+.thanks{text-align:center;padding:1rem 0}
+.thanks svg{width:84px;height:84px}
+.thanks svg path{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .8s ease forwards .3s}
+.thanks h3{font-family:var(--script);font-weight:400;font-size:2.6rem;color:var(--lav-d);margin:.4rem 0 .2rem}
+.note{text-align:center;font-size:1rem;color:var(--muted);margin-top:1rem}
+
+/* ---------- Final ---------- */
+.finale{text-align:center;padding-bottom:7rem}
+.finale .names-sm{font-family:var(--script);font-size:clamp(2.8rem,11vw,4.4rem);color:var(--lav-d);line-height:1.1;margin:.4rem 0 1.4rem}
+.big-heart{width:92px;height:92px;border:0;background:none;cursor:pointer;padding:0;animation:beat 1.6s ease-in-out infinite}
+.big-heart svg{width:100%;height:100%;filter:drop-shadow(0 10px 14px rgba(91,63,140,.45))}
+.finale small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;color:var(--muted)}
+
+/* ---------- Muzică ---------- */
+.music{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:75;width:54px;height:54px;border-radius:50%;border:0;cursor:pointer;
+  background:linear-gradient(135deg,var(--lav),var(--lav-d));color:#fff;box-shadow:0 10px 24px -8px rgba(91,63,140,.8);display:none;align-items:center;justify-content:center;gap:3px}
+.opened .music{display:flex;animation:pop .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(0)}}
+.music i{width:3px;height:16px;border-radius:2px;background:#fff;transform-origin:50% 100%;transform:scaleY(.25)}
+.music.on i{animation:eq 1s ease-in-out infinite}
+.music.on i:nth-child(2){animation-delay:-.3s}.music.on i:nth-child(3){animation-delay:-.6s}.music.on i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+.music:not(.on)::after{content:"";position:absolute;width:30px;height:2px;background:#fff;transform:rotate(-45deg);border-radius:2px}
+
+/* ---------- Mobil ---------- */
+@media (max-width:600px){
+  body{font-size:18px}
+  section{padding:4.2rem 18px}
+  .badge{width:86px;height:86px;right:-18px}
+  .bouquet{width:84px;height:96px}.bouquet.l{left:-26px}.bouquet.r{right:-26px}
+  .tl::before,.tl .fill{left:32px}
+  .ev{grid-template-columns:64px 1fr}
+  .cd small{font-size:.58rem;letter-spacing:.08em}
+  .save .acts{flex-direction:column;align-items:center}
+  .save .acts .btn{width:min(100%,290px)}
+  .ev .ic{grid-column:1}
+  .ev:nth-child(odd) .txt,.ev:nth-child(even) .txt{grid-column:2;text-align:left;padding-right:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+}
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gHeart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9a3dc"/><stop offset="1" stop-color="#5b3f8c"/></linearGradient>
+    <symbol id="sprig" viewBox="0 0 30 130">
+      <path d="M15 130 C15 100 14 70 15 16" stroke="#7f9a78" stroke-width="1.6" fill="none"/>
+      <path d="M15 104 q-11 -6 -13 -20 q10 6 13 20z" fill="#93ab8b"/>
+      <path d="M15 94 q11 -6 13 -20 q-10 6 -13 20z" fill="#a3b89c"/>
+      <g fill="#8e6bbf">
+        <ellipse cx="15" cy="14" rx="2.6" ry="4"/>
+        <ellipse cx="12" cy="21" rx="3" ry="4.4" transform="rotate(-20 12 21)" fill="#a587d3"/>
+        <ellipse cx="18" cy="24" rx="3" ry="4.4" transform="rotate(20 18 24)"/>
+        <ellipse cx="11.5" cy="30" rx="3.2" ry="4.6" transform="rotate(-22 11.5 30)"/>
+        <ellipse cx="18.5" cy="33" rx="3.2" ry="4.6" transform="rotate(22 18.5 33)" fill="#a587d3"/>
+        <ellipse cx="11" cy="40" rx="3.3" ry="4.8" transform="rotate(-24 11 40)" fill="#7a58ad"/>
+        <ellipse cx="19" cy="43" rx="3.3" ry="4.8" transform="rotate(24 19 43)"/>
+        <ellipse cx="11" cy="51" rx="3.2" ry="4.6" transform="rotate(-24 11 51)" fill="#a587d3"/>
+        <ellipse cx="19" cy="54" rx="3.2" ry="4.6" transform="rotate(24 19 54)" fill="#7a58ad"/>
+        <ellipse cx="11.5" cy="62" rx="2.8" ry="4" transform="rotate(-22 11.5 62)"/>
+        <ellipse cx="18.5" cy="65" rx="2.8" ry="4" transform="rotate(22 18.5 65)" fill="#a587d3"/>
+      </g>
+    </symbol>
+    <symbol id="rose" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="17" fill="#fff" stroke="#e7def3"/>
+      <path d="M20 9c6 0 10 5 9 10-1 6-7 9-11 7-5-2-4-9 1-9 3 0 5 3 3 5" fill="none" stroke="#d7cbe8" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 32 30"><path d="M16 29S2 20.5 2 10.5C2 5.5 5.8 2 10 2c2.7 0 4.8 1.4 6 3.5C17.2 3.4 19.3 2 22 2c4.2 0 8 3.5 8 8.5C30 20.5 16 29 16 29z"/></symbol>
+  </defs>
+</svg>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"></div>
+
+<!-- Plicul de deschidere -->
+<div id="envelope" role="dialog" aria-label="Invitație sigilată">
+  <div class="env-hello">
+    <div class="to">O invitație pentru tine</div>
+    <div class="nm">Ștefana &amp; Octavian</div>
+  </div>
+  <div class="env" id="env">
+    <div class="env-back"></div>
+    <div class="letter"><div class="l-names">Ștefana &amp; Octavian</div><div class="l-date">22 · 05 · 2027</div></div>
+    <div class="pocket"></div>
+    <div class="flap-wrap"><div class="flap"></div></div>
+    <button class="seal" id="seal" aria-label="Deschide invitația"><span class="half h1">Ș&amp;O</span><span class="half h2">Ș&amp;O</span></button>
+  </div>
+  <div class="env-tap">Atinge sigiliul pentru a deschide</div>
+</div>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="acasa">
+    <div class="floating" id="floating" aria-hidden="true"></div>
+    <div class="field" id="field" aria-hidden="true"></div>
+    <p class="kicker fade-up fu1">Ne căsătorim!</p>
+    <div class="arch-wrap fade-up fu1">
+      <svg class="arch-line" viewBox="0 0 300 400" preserveAspectRatio="none" aria-hidden="true">
+        <path class="main" d="M6 396 V150 A144 144 0 0 1 294 150 V396 Z"/>
+        <path class="thin" d="M0 400 V150 A150 150 0 0 1 300 150 V400"/>
+      </svg>
+      <div class="arch"><img src="assets/poza.jpg" alt="Ștefana și Octavian sub o arcadă de flori albe"></div>
+      <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="58" fill="#fffdf9" stroke="#e3cf9f"/>
+        <circle cx="60" cy="60" r="34" fill="none" stroke="#e3cf9f" stroke-dasharray="2 3"/>
+        <defs><path id="circ" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+        <text><textPath href="#circ">SALVAȚI DATA • 22 • 05 • 2027 •</textPath></text>
+        <use href="#heart" x="47" y="48" width="26" height="24" fill="url(#gHeart)"/>
+      </svg>
+      <svg class="bouquet l" viewBox="0 0 110 120" aria-hidden="true">
+        <use href="#sprig" x="20" y="0" width="30" height="120" transform="rotate(-14 35 120)"/>
+        <use href="#sprig" x="40" y="-6" width="30" height="126"/>
+        <use href="#sprig" x="58" y="4" width="30" height="116" transform="rotate(16 73 120)"/>
+        <use href="#rose" x="34" y="78" width="26" height="26"/><use href="#rose" x="54" y="86" width="22" height="22"/>
+      </svg>
+      <svg class="bouquet r" viewBox="0 0 110 120" aria-hidden="true">
+        <use href="#sprig" x="22" y="4" width="30" height="116" transform="rotate(-16 37 120)"/>
+        <use href="#sprig" x="40" y="-6" width="30" height="126"/>
+        <use href="#sprig" x="60" y="0" width="30" height="120" transform="rotate(14 75 120)"/>
+        <use href="#rose" x="50" y="78" width="26" height="26"/><use href="#rose" x="34" y="86" width="22" height="22"/>
+      </svg>
+    </div>
+    <h1 class="names"><span class="w n1"><span class="shimmer">Ștefana</span></span><span class="amp">&amp;</span><span class="w n2"><span class="shimmer">Octavian</span></span></h1>
+    <p class="hero-date fade-up fu2">22 · 05 · 2027</p>
+    <p class="hero-sub fade-up fu3">Cununie civilă · Iași</p>
+    <a class="scroll-hint fade-up fu4" href="#invitatie"><span class="mouse"></span>Derulează</a>
+  </section>
+
+  <!-- Invitația -->
+  <section class="invite" id="invitatie">
+    <p class="eyebrow reveal">Dragii noștri</p>
+    <h2 class="title reveal">Vă invităm cu drag</h2>
+    <div class="lead reveal" style="--d:.15s">
+      <p>Pentru că cele mai frumoase momente sunt cele împărtășite cu cei dragi, vă invităm cu bucurie să fiți alături de noi în ziua în care ne unim destinele.</p>
+      <p>Vom spune „Da” în fața ofițerului de stare civilă și ne-am bucura nespus să sărbătorim apoi împreună cu voi.</p>
+    </div>
+    <blockquote class="quote card reveal" style="--d:.3s">Iubirea nu înseamnă să ne privim unul pe altul, ci să privim împreună în aceeași direcție.<cite>Antoine de Saint-Exupéry</cite></blockquote>
+  </section>
+
+  <div class="divider reveal" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><use href="#sprig" x="2" y="-20" width="20" height="80" transform="rotate(-70 12 20)"/><use href="#heart" x="26" y="7" width="18" height="17" fill="url(#gHeart)"/><use href="#sprig" x="48" y="-20" width="20" height="80" transform="rotate(70 58 20)"/></svg><span></span></div>
+
+  <!-- Data -->
+  <section id="data">
+    <p class="eyebrow reveal">Salvați data</p>
+    <h2 class="title reveal">Sâmbătă, 22 mai</h2>
+    <div class="cal card reveal" style="--d:.15s">
+      <div class="cal-head"><small>2027</small>Mai</div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-foot">Cununia civilă începe la ora <b data-ora="cununie">13:00</b></div>
+    </div>
+  </section>
+
+  <!-- Numărătoare inversă -->
+  <section id="numaratoare">
+    <p class="eyebrow reveal">Numărăm clipele</p>
+    <h2 class="title reveal">Până la marele „Da”</h2>
+    <div class="cd reveal" id="cd" style="--d:.15s">
+      <div class="u card"><span class="num" data-k="d">0</span><small>Zile</small></div>
+      <div class="u card"><span class="num" data-k="h">0</span><small>Ore</small></div>
+      <div class="u card"><span class="num" data-k="m">0</span><small>Minute</small></div>
+      <div class="u card"><span class="num" data-k="s">0</span><small>Secunde</small></div>
+    </div>
+  </section>
+
+  <!-- Programul zilei -->
+  <section id="program">
+    <p class="eyebrow reveal">Programul zilei</p>
+    <h2 class="title reveal">O zi de poveste</h2>
+    <div class="tl" id="tl">
+      <div class="fill"></div>
+      <div class="ev reveal">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#8e6bbf" stroke-width="2"><circle cx="18" cy="28" r="11"/><circle cx="30" cy="28" r="11" stroke="#b8975a"/><path d="M15 12l3-5 3 5" stroke="#b8975a"/><path d="M14 12h8" stroke="#b8975a"/></svg></div>
+        <div class="txt"><div class="time" data-ora="cununie">13:00</div><h3>Cununia civilă</h3><p>Primăria Lețcani<br>Ne spunem „Da” în fața celor dragi</p></div>
+      </div>
+      <div class="ev reveal">
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#8e6bbf" stroke-width="2" stroke-linecap="round"><path d="M10 8h10l-1 11a4 4 0 0 1-8 0z"/><path d="M15 23v15M11 38h8"/><path d="M28 8h10l-1 11a4 4 0 0 1-8 0z" stroke="#b8975a"/><path d="M33 23v15M29 38h8" stroke="#b8975a"/><path d="M22 5l2-3M24 7l4-2" stroke="#b8975a"/></svg></div>
+        <div class="txt"><div class="time" data-ora="petrecere">18:00</div><h3>Petrecerea</h3><p>Restaurant Crystal, Sala Diamant<br>Sărbătorim împreună până în zori</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locații -->
+  <section id="locatii">
+    <p class="eyebrow reveal">Unde ne vedem</p>
+    <h2 class="title reveal">Locațiile</h2>
+    <div class="locs">
+      <article class="loc card reveal">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="#8e6bbf"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+        <div class="tag">Cununia civilă</div>
+        <h3>Primăria Lețcani</h3>
+        <p class="where">Lețcani, județul Iași</p>
+        <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="cununie">13:00</span></p>
+        <div class="map"><iframe loading="lazy" title="Harta Primăria Lețcani" src="https://maps.google.com/maps?q=Prim%C4%83ria%20Le%C8%9Bcani%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="acts">
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Prim%C4%83ria%20Le%C8%9Bcani%2C%20Ia%C8%99i"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Google Maps</a>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://waze.com/ul?q=Primaria%20Letcani%20Iasi&navigate=yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15c-1.5-6 3-11 9-11s9 4 8 9c-.6 3-3 5-6 5H9c-2 0-4-1-5-3z"/><circle cx="9" cy="20" r="1.6"/><circle cx="16" cy="20" r="1.6"/><circle cx="10" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg>Waze</a>
+        </div>
+      </article>
+      <article class="loc card reveal" style="--d:.15s">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="#b8975a"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+        <div class="tag">Petrecerea</div>
+        <h3>Restaurant Crystal</h3>
+        <p class="where">Sala Diamant · Valea Lupului, județul Iași</p>
+        <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="petrecere">18:00</span></p>
+        <div class="map"><iframe loading="lazy" title="Harta Restaurant Crystal" src="https://maps.google.com/maps?q=Restaurant%20Crystal%2C%20Valea%20Lupului%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="acts">
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Crystal%2C%20Valea%20Lupului%2C%20Ia%C8%99i"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Google Maps</a>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://waze.com/ul?q=Restaurant%20Crystal%20Valea%20Lupului&navigate=yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15c-1.5-6 3-11 9-11s9 4 8 9c-.6 3-3 5-6 5H9c-2 0-4-1-5-3z"/><circle cx="9" cy="20" r="1.6"/><circle cx="16" cy="20" r="1.6"/><circle cx="10" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg>Waze</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Adaugă în calendar -->
+  <section class="save" id="calendar">
+    <p class="eyebrow reveal">Nu uitați</p>
+    <h2 class="title reveal">Adăugați în calendar</h2>
+    <p class="lead reveal">Ca să nu ratați niciun moment, salvați data în calendarul vostru.</p>
+    <div class="acts reveal" style="--d:.15s">
+      <a class="btn" id="gcal1" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Google · Cununia</a>
+      <a class="btn" id="gcal2" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Google · Petrecerea</a>
+      <button class="btn ghost" id="ics" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>iPhone / Outlook (.ics)</button>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp">
+    <p class="eyebrow reveal">Confirmare</p>
+    <h2 class="title reveal">Ne veți fi alături?</h2>
+    <p class="lead reveal">Vă rugăm să ne confirmați prezența cât mai curând. Mesajul se trimite pe WhatsApp, gata scris.</p>
+    <div class="rsvp card reveal" style="--d:.15s;margin-top:1.8rem" id="rsvpCard">
+      <form id="rsvpForm" novalidate>
+        <div class="fld">
+          <label for="nume">Numele vostru</label>
+          <input type="text" id="nume" name="nume" autocomplete="name" placeholder="ex. Andrei și Maria Popescu">
+          <div class="err" id="numeErr" hidden>Vă rugăm să ne spuneți numele.</div>
+        </div>
+        <fieldset class="fld">
+          <legend>Veți participa?</legend>
+          <div class="choice">
+            <label><input type="radio" name="vine" value="da" checked><span>Da, cu mare drag!</span></label>
+            <label><input type="radio" name="vine" value="nu"><span>Din păcate, nu</span></label>
+          </div>
+        </fieldset>
+        <div class="fld" id="persBox">
+          <label>Număr de persoane</label>
+          <div class="stepper"><button type="button" id="minus" aria-label="Mai puține persoane">−</button><output id="pers">1</output><button type="button" id="plus" aria-label="Mai multe persoane">+</button></div>
+        </div>
+        <div class="fld">
+          <label for="mentiuni">Mențiuni (meniu vegetarian, alergii, copii)</label>
+          <textarea id="mentiuni" name="mentiuni" rows="3" placeholder="Opțional"></textarea>
+        </div>
+        <button class="btn" type="submit" style="align-self:center;padding:.95rem 1.6rem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>Trimite pe WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="divider reveal" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><use href="#sprig" x="2" y="-20" width="20" height="80" transform="rotate(-70 12 20)"/><use href="#heart" x="26" y="7" width="18" height="17" fill="url(#gHeart)"/><use href="#sprig" x="48" y="-20" width="20" height="80" transform="rotate(70 58 20)"/></svg><span></span></div>
+
+  <!-- Final -->
+  <section class="finale" id="final">
+    <p class="eyebrow reveal">Cu toată dragostea</p>
+    <h2 class="title reveal">Vă așteptăm cu drag!</h2>
+    <div class="names-sm reveal" style="--d:.15s">Ștefana &amp; Octavian</div>
+    <button class="big-heart reveal" id="bigHeart" style="--d:.3s" aria-label="Trimite iubire"><svg viewBox="0 0 32 30"><use href="#heart" fill="url(#gHeart)"/></svg></button>
+    <small class="reveal" style="--d:.4s">Atinge inima</small>
+  </section>
+</main>
+
+<footer>ȘTEFANA &amp; OCTAVIAN · 22.05.2027 · IAȘI</footer>
+
+<button class="music" id="music" aria-label="Pornește sau oprește muzica"><i></i><i></i><i></i><i></i></button>
+
+<script>
+/* Datele de editat: orele, numărul de WhatsApp (cu prefixul țării, fără +) */
+const CONFIG = {
+  data: '2027-05-22',
+  fus: '+03:00',
+  cununie: { ora: '13:00', durata: 1, titlu: 'Cununia civilă Ștefana & Octavian', loc: 'Primăria Lețcani, județul Iași' },
+  petrecere: { ora: '18:00', durata: 10, titlu: 'Petrecerea Ștefana & Octavian', loc: 'Restaurant Crystal, Sala Diamant, Valea Lupului, județul Iași' },
+  whatsapp: '40700000000'
+};
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const when = ev => new Date(`${CONFIG.data}T${CONFIG[ev].ora}:00${CONFIG.fus}`);
+
+$$('[data-ora]').forEach(el => el.textContent = CONFIG[el.dataset.ora].ora);
+
+/* ---------- Particule: petale, sclipiri, confetti ---------- */
+const cvs = $('#fx'), ctx = cvs.getContext('2d');
+let W = 0, H = 0;
+function resize() {
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  W = innerWidth; H = innerHeight;
+  cvs.width = W * dpr; cvs.height = H * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+resize(); addEventListener('resize', resize);
+const PCOL = ['#b9a3dc', '#9c7fcc', '#d8ccef', '#ffffff', '#f4eefb', '#c7b3e6', '#ffffff'];
+const CCOL = ['#8e6bbf', '#b9a3dc', '#e3cf9f', '#b8975a', '#ffffff', '#a3b89c'];
+const petals = [], sparks = [], confetti = [];
+const rnd = (a, b) => a + Math.random() * (b - a);
+const pick = a => a[(Math.random() * a.length) | 0];
+function petal(top) {
+  return { x: rnd(0, W), y: top ? rnd(-H * .3, -20) : rnd(0, H), s: rnd(6, 14), vy: rnd(.35, 1.1), vx: rnd(-.3, .4),
+           a: rnd(0, 6.28), va: rnd(-.02, .02), sw: rnd(0, 6.28), fl: rnd(0, 6.28), c: pick(PCOL) };
+}
+function targetPetals() { return reduced ? 6 : (W < 600 ? 22 : 36); }
+for (let i = 0; i < targetPetals(); i++) petals.push(petal(false));
+function spark(x, y, big) {
+  sparks.push({ x, y, vx: rnd(-1, 1) * (big ? 3 : .6), vy: rnd(-1, 1) * (big ? 3 : .6) - (big ? 1 : .3), r: rnd(2, big ? 6 : 4), life: 1, c: Math.random() < .7 ? '#e3cf9f' : '#ffffff' });
+}
+function burst(x, y, n = 80) {
+  for (let i = 0; i < n; i++) {
+    const ang = rnd(0, 6.28), sp = rnd(3, 10);
+    confetti.push({ x, y, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 4, w: rnd(5, 9), h: rnd(8, 14), a: rnd(0, 6.28), va: rnd(-.25, .25), c: pick(CCOL), life: 1, heart: Math.random() < .25 });
+  }
+  for (let i = 0; i < 24; i++) spark(x, y, true);
+  for (let i = 0; i < 12; i++) { const p = petal(false); p.x = x + rnd(-30, 30); p.y = y + rnd(-30, 30); p.vy = rnd(-2, 1); petals.push(p); }
+}
+const heartPath = new Path2D('M0 6S-7 1.8-7-3.2C-7-5.7-5.1-7.5-3-7.5c1.4 0 2.4.7 3 1.8.6-1.1 1.6-1.8 3-1.8 2.1 0 4 1.8 4 4.3C7 1.8 0 6 0 6z');
+function drawPetal(p) {
+  ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.scale(1, Math.abs(Math.cos(p.fl)) * .8 + .2);
+  const s = p.s;
+  ctx.beginPath(); ctx.moveTo(0, -s);
+  ctx.bezierCurveTo(s * .9, -s * .5, s * .6, s * .8, 0, s);
+  ctx.bezierCurveTo(-s * .6, s * .8, -s * .9, -s * .5, 0, -s);
+  ctx.fillStyle = p.c; ctx.globalAlpha = .9; ctx.fill();
+  ctx.strokeStyle = 'rgba(142,107,191,.25)'; ctx.lineWidth = .8; ctx.stroke();
+  ctx.restore();
+}
+function drawStar(x, y, r) {
+  ctx.beginPath();
+  for (let i = 0; i < 8; i++) { const rr = i % 2 ? r * .3 : r, an = i * Math.PI / 4; ctx.lineTo(x + Math.cos(an) * rr, y + Math.sin(an) * rr); }
+  ctx.closePath(); ctx.fill();
+}
+let running = true;
+function frame() {
+  ctx.clearRect(0, 0, W, H);
+  const t = performance.now() / 1000;
+  for (let i = petals.length - 1; i >= 0; i--) {
+    const p = petals[i];
+    p.sw += .02; p.fl += .03; p.a += p.va;
+    p.x += p.vx + Math.sin(p.sw) * .6; p.y += p.vy;
+    if (p.vy < .35) p.vy += .03;
+    if (p.y > H + 30 || p.x < -40 || p.x > W + 40) {
+      if (petals.length > targetPetals()) { petals.splice(i, 1); continue; }
+      Object.assign(p, petal(true));
+    }
+    drawPetal(p);
+  }
+  if (!reduced && Math.random() < .06) spark(rnd(0, W), rnd(0, H), false);
+  for (let i = sparks.length - 1; i >= 0; i--) {
+    const s = sparks[i];
+    s.x += s.vx; s.y += s.vy; s.life -= .015;
+    if (s.life <= 0) { sparks.splice(i, 1); continue; }
+    ctx.globalAlpha = s.life * (.6 + .4 * Math.sin(t * 8 + i)); ctx.fillStyle = s.c;
+    drawStar(s.x, s.y, s.r * s.life);
+  }
+  for (let i = confetti.length - 1; i >= 0; i--) {
+    const c = confetti[i];
+    c.vy += .18; c.vx *= .985; c.x += c.vx; c.y += c.vy; c.a += c.va; c.life -= .007;
+    if (c.life <= 0 || c.y > H + 40) { confetti.splice(i, 1); continue; }
+    ctx.save(); ctx.globalAlpha = Math.min(1, c.life * 2); ctx.translate(c.x, c.y); ctx.rotate(c.a); ctx.fillStyle = c.c;
+    if (c.heart) { ctx.scale(1.3, 1.3); ctx.fill(heartPath); } else { ctx.scale(1, Math.cos(c.a * 2)); ctx.fillRect(-c.w / 2, -c.h / 2, c.w, c.h); }
+    ctx.restore();
+  }
+  ctx.globalAlpha = 1;
+  if (running) requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+document.addEventListener('visibilitychange', () => { const r = !document.hidden; if (r && !running) { running = true; requestAnimationFrame(frame); } else running = r; });
+if (matchMedia('(pointer:fine)').matches && !reduced) {
+  let last = 0;
+  addEventListener('pointermove', e => { const n = performance.now(); if (n - last > 40) { last = n; spark(e.clientX, e.clientY, false); } });
+}
+
+/* ---------- Muzică: cutie muzicală generată în browser ---------- */
+const Music = (() => {
+  let ac, master, timer, next = 0, step = 0, on = false;
+  const BPM = 66, EIGHTH = 60 / BPM / 2;
+  const chords = [[50,57,62,66],[45,52,57,61],[47,54,59,62],[42,49,54,57],[43,50,55,59],[38,45,50,54],[43,50,55,59],[45,52,57,61]];
+  const melody = [[78,76],[76,73],[74,71],[73,69],[71,67],[69,66],[71,74],[73,76]];
+  const arp = [0, 1, 2, 3, 2, 1, 2, 1];
+  function init() {
+    ac = new (window.AudioContext || window.webkitAudioContext)();
+    master = ac.createGain(); master.gain.value = 0;
+    const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3800;
+    const dl = ac.createDelay(); dl.delayTime.value = .31;
+    const fb = ac.createGain(); fb.gain.value = .32;
+    const wet = ac.createGain(); wet.gain.value = .28;
+    master.connect(lp); lp.connect(ac.destination);
+    lp.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(wet); wet.connect(ac.destination);
+  }
+  function note(m, t, vel, dur) {
+    const f = 440 * Math.pow(2, (m - 69) / 12);
+    const g = ac.createGain(), o = ac.createOscillator(), o2 = ac.createOscillator(), g2 = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f; o2.type = 'sine'; o2.frequency.value = f * 3.01; g2.gain.value = .14;
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(master);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vel, t + .006); g.gain.exponentialRampToValueAtTime(.0005, t + dur);
+    o.start(t); o2.start(t); o.stop(t + dur + .05); o2.stop(t + dur + .05);
+  }
+  function schedule() {
+    while (next < ac.currentTime + .25) {
+      const bar = Math.floor(step / 8) % 8, s = step % 8, ch = chords[bar];
+      note(ch[arp[s]] + 12, next, .07, 1.6);
+      if (s === 0) { note(ch[0], next, .09, 2.6); note(melody[bar][0], next, .12, 2.2); }
+      if (s === 4) note(melody[bar][1], next, .1, 2);
+      if (s === 6 && bar % 2) note(melody[bar][1] + 12, next, .04, 1.4);
+      next += EIGHTH; step++;
+    }
+  }
+  return {
+    get on() { return on; },
+    start() {
+      try {
+        if (!ac) init();
+        ac.resume(); on = true;
+        master.gain.cancelScheduledValues(ac.currentTime);
+        master.gain.setTargetAtTime(.9, ac.currentTime, .6);
+        if (!timer) { next = ac.currentTime + .1; timer = setInterval(schedule, 60); }
+      } catch (e) { on = false; }
+    },
+    stop() {
+      if (!ac) return; on = false;
+      master.gain.setTargetAtTime(0, ac.currentTime, .25);
+      setTimeout(() => { if (!on) { clearInterval(timer); timer = null; ac.suspend(); } }, 1200);
+    }
+  };
+})();
+/* Piesa din assets/muzica.mp3; fără fișier, cântă cutia muzicală de mai sus */
+const Player = (() => {
+  const audio = new Audio('assets/muzica.mp3');
+  audio.loop = true; audio.preload = 'auto';
+  let ok = true, on = false, fade;
+  const fallback = () => { ok = false; if (on) { on = false; Music.start(); sync(); } };
+  audio.addEventListener('error', fallback);
+  function ramp(to, done) {
+    const from = audio.volume; let i = 0; clearInterval(fade);
+    fade = setInterval(() => { i++; audio.volume = from + (to - from) * i / 15; if (i >= 15) { clearInterval(fade); done && done(); } }, 60);
+  }
+  return {
+    get on() { return ok ? on : Music.on; },
+    start() { if (!ok) return Music.start(); on = true; audio.volume = 0; audio.play().then(() => ramp(.85)).catch(fallback); },
+    stop() { if (!ok) return Music.stop(); on = false; ramp(0, () => { if (!on) audio.pause(); }); }
+  };
+})();
+const musicBtn = $('#music');
+const sync = () => musicBtn.classList.toggle('on', Player.on);
+musicBtn.addEventListener('click', () => { Player.on ? Player.stop() : Player.start(); sync(); });
+
+/* ---------- Deschiderea plicului ---------- */
+const envEl = $('#envelope'), env = $('#env');
+function reveal() {
+  document.body.classList.remove('locked');
+  document.body.classList.add('opened');
+}
+function openEnvelope() {
+  if (env.classList.contains('opening')) return;
+  env.classList.add('opening'); envEl.classList.add('busy');
+  const r = $('#seal').getBoundingClientRect();
+  burst(r.left + r.width / 2, r.top + r.height / 2, 90);
+  Player.start(); sync();
+  setTimeout(() => env.classList.add('letter-out'), 750);
+  setTimeout(() => { envEl.classList.add('gone'); reveal(); burst(W / 2, H * .35, 70); }, 2100);
+  setTimeout(() => envEl.remove(), 3300);
+}
+env.addEventListener('click', openEnvelope);
+if (location.hash === '#deschis') { envEl.remove(); reveal(); }
+
+/* ---------- Câmp de lavandă și inimioare plutitoare ---------- */
+(() => {
+  const field = $('#field'), n = W < 600 ? 16 : 30;
+  for (let i = 0; i < n; i++) {
+    const h = rnd(70, 150), s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('viewBox', '0 0 30 130');
+    s.style.cssText = `left:${(i / n) * 100 + rnd(-2, 2)}%;height:${h}px;width:${h * .23}px;--r:${rnd(-8, 8)}deg;animation-delay:${rnd(-4, 0)}s;animation-duration:${rnd(3.5, 5.5)}s;opacity:${rnd(.55, 1)}`;
+    s.innerHTML = '<use href="#sprig"/>';
+    field.appendChild(s);
+  }
+  const fl = $('#floating');
+  for (let i = 0; i < 10; i++) {
+    const e = document.createElement('i');
+    e.innerHTML = '<svg width="1em" height="1em" viewBox="0 0 32 30"><use href="#heart" fill="currentColor"/></svg>';
+    e.style.cssText = `left:${rnd(2, 96)}%;font-size:${rnd(10, 22)}px;animation-duration:${rnd(9, 16)}s;animation-delay:${rnd(0, 10)}s;color:${pick(['#b9a3dc', '#d8ccef', '#e3cf9f'])}`;
+    fl.appendChild(e);
+  }
+})();
+
+/* ---------- Apariție la derulare ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+$$('.reveal').forEach(el => io.observe(el));
+const bar = $('.progress'), tl = $('#tl'), field = $('#field');
+function onScroll() {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+  const r = tl.getBoundingClientRect();
+  tl.style.setProperty('--p', Math.max(0, Math.min(1, (innerHeight * .75 - r.top) / r.height)));
+  field.style.transform = `translateY(${Math.min(scrollY * .25, 200)}px)`;
+}
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+/* ---------- Calendarul lunii mai 2027 ---------- */
+(() => {
+  const g = $('#calGrid'), [Y, M, D] = CONFIG.data.split('-').map(Number);
+  ['Lu', 'Ma', 'Mi', 'Jo', 'Vi', 'Sâ', 'Du'].forEach(d => g.insertAdjacentHTML('beforeend', `<div class="dn">${d}</div>`));
+  const first = (new Date(Y, M - 1, 1).getDay() + 6) % 7, days = new Date(Y, M, 0).getDate();
+  for (let i = 0; i < first; i++) g.insertAdjacentHTML('beforeend', '<div></div>');
+  for (let d = 1; d <= days; d++) {
+    g.insertAdjacentHTML('beforeend', d === D
+      ? `<div class="d big"><svg viewBox="0 0 32 30"><use href="#heart" fill="url(#gHeart)"/></svg>${d}</div>`
+      : `<div class="d">${d}</div>`);
+  }
+})();
+
+/* ---------- Numărătoare inversă ---------- */
+(() => {
+  const target = when('cununie').getTime(), els = {};
+  $$('#cd .num').forEach(e => els[e.dataset.k] = e);
+  function set(k, v) { const e = els[k], s = String(v).padStart(2, '0'); if (e.textContent !== s) { e.textContent = s; e.classList.remove('tick'); void e.offsetWidth; e.classList.add('tick'); } }
+  function tick() {
+    let ms = target - Date.now();
+    if (ms <= 0) { $('#cd').outerHTML = '<div class="cd-done">Ne-am căsătorit! Mulțumim că ați fost alături de noi.</div>'; clearInterval(iv); return; }
+    const d = Math.floor(ms / 864e5); ms -= d * 864e5;
+    const h = Math.floor(ms / 36e5); ms -= h * 36e5;
+    const m = Math.floor(ms / 6e4); ms -= m * 6e4;
+    set('d', d); set('h', h); set('m', m); set('s', Math.floor(ms / 1000));
+  }
+  const iv = setInterval(tick, 1000); tick();
+})();
+
+/* ---------- Adaugă în calendar ---------- */
+(() => {
+  const fmt = d => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const span = ev => { const s = when(ev); return [s, new Date(s.getTime() + CONFIG[ev].durata * 36e5)]; };
+  ['cununie', 'petrecere'].forEach((ev, i) => {
+    const [s, e] = span(ev), c = CONFIG[ev];
+    $('#gcal' + (i + 1)).href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(c.titlu) + '&dates=' + fmt(s) + '/' + fmt(e)
+      + '&location=' + encodeURIComponent(c.loc) + '&details=' + encodeURIComponent('Vă așteptăm cu drag! Ștefana & Octavian');
+  });
+  $('#ics').addEventListener('click', () => {
+    const esc = t => t.replace(/([,;])/g, '\\$1');
+    const evs = ['cununie', 'petrecere'].map(ev => { const [s, e] = span(ev), c = CONFIG[ev];
+      return ['BEGIN:VEVENT', `UID:${ev}-stefana-octavian-2027@invitatie`, `DTSTAMP:${fmt(new Date())}`, `DTSTART:${fmt(s)}`, `DTEND:${fmt(e)}`,
+              `SUMMARY:${esc(c.titlu)}`, `LOCATION:${esc(c.loc)}`, 'BEGIN:VALARM', 'TRIGGER:-P1D', 'ACTION:DISPLAY', `DESCRIPTION:${esc(c.titlu)}`, 'END:VALARM', 'END:VEVENT'].join('\r\n'); });
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Stefana si Octavian//Invitatie//RO', ...evs, 'END:VCALENDAR'].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+    a.download = 'Stefana-si-Octavian-22-mai-2027.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+})();
+
+/* ---------- Confirmare pe WhatsApp ---------- */
+(() => {
+  const f = $('#rsvpForm'), out = $('#pers');
+  let n = 1;
+  const setN = v => { n = Math.max(1, Math.min(10, v)); out.textContent = n; };
+  $('#minus').onclick = () => setN(n - 1);
+  $('#plus').onclick = () => setN(n + 1);
+  f.addEventListener('change', () => { $('#persBox').hidden = f.vine.value === 'nu'; });
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const nume = f.nume.value.trim(), ment = f.mentiuni.value.trim(), da = f.vine.value === 'da';
+    if (!nume) { $('#numeErr').hidden = false; f.nume.classList.remove('shake'); void f.nume.offsetWidth; f.nume.classList.add('shake'); f.nume.focus(); return; }
+    $('#numeErr').hidden = true;
+    const msg = da
+      ? `Bună, Ștefana și Octavian! Sunt ${nume} și confirm cu drag prezența la cununia voastră civilă din 22 mai 2027. Număr de persoane: ${n}.` + (ment ? `\nMențiuni: ${ment}` : '')
+      : `Bună, Ștefana și Octavian! Sunt ${nume}. Din păcate nu voi putea fi alături de voi pe 22 mai 2027, dar vă doresc tot binele din lume!` + (ment ? `\n${ment}` : '');
+    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+    const r = $('#rsvpCard').getBoundingClientRect();
+    burst(r.left + r.width / 2, r.top + r.height / 2, da ? 110 : 40);
+    $('#rsvpCard').innerHTML = `<div class="thanks"><svg viewBox="0 0 84 84" fill="none"><circle cx="42" cy="42" r="38" stroke="#e3cf9f" stroke-width="2"/><path d="M26 43l11 11 22-24" stroke="#8e6bbf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>${da ? 'Mulțumim!' : 'Vă mulțumim!'}</h3><p class="lead">${da ? 'Abia așteptăm să sărbătorim împreună!' : 'Ne veți lipsi, dar vă purtăm în gând.'}</p>
+      <p class="note">Dacă WhatsApp nu s-a deschis, <a href="https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">apăsați aici</a>.</p></div>`;
+  });
+})();
+
+/* ---------- Inima de final ---------- */
+$('#bigHeart').addEventListener('click', e => {
+  const r = e.currentTarget.getBoundingClientRect();
+  burst(r.left + r.width / 2, r.top + r.height / 2, 140);
+});
+</script>
+</body>
+</html>
