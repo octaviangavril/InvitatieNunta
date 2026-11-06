@@ -18,6 +18,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%238e6bbf' d='M16 29S3 21 3 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 13 3.5C29 21 16 29 16 29z'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#8e6bbf">
+<link rel="preconnect" href="https://maps.google.com">
+<link rel="preconnect" href="https://www.google.com">
+<link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -146,7 +149,6 @@ section{position:relative;padding:5.5rem 20px;max-width:980px;margin:0 auto}
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite;display:inline-block;padding:.3em .35em;margin:-.3em -.35em}
 @keyframes shimmer{from{background-position:100% 0}to{background-position:-200% 0}}
 .hero-date{font-family:var(--serif);font-size:1.5rem;letter-spacing:.3em;color:var(--ink);margin:.6rem 0 0}
-.hero-sub{font-family:var(--sans);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:.4rem 0 0}
 .fade-up{opacity:0;transform:translateY(16px);transition:all 1.2s ease}
 .opened .fade-up{opacity:1;transform:none}
 .opened .fu1{transition-delay:.2s}.opened .fu2{transition-delay:3s}.opened .fu3{transition-delay:3.4s}.opened .fu4{transition-delay:4s}
@@ -252,7 +254,7 @@ fieldset.fld{border:0;margin:0;padding:0;min-width:0}
 /* ---------- Final ---------- */
 .finale{text-align:center;padding-bottom:7rem}
 .finale .names-sm{font-family:var(--script);font-size:clamp(2.8rem,11vw,4.4rem);color:var(--lav-d);line-height:1.1;margin:.4rem 0 1.4rem}
-.big-heart{width:92px;height:92px;border:0;background:none;cursor:pointer;padding:0;animation:beat 1.6s ease-in-out infinite}
+.big-heart{width:92px;height:92px;border:0;background:none;cursor:pointer;padding:0;outline:none;-webkit-tap-highlight-color:transparent;animation:beat 1.6s ease-in-out infinite}
 .big-heart svg{width:100%;height:100%;filter:drop-shadow(0 10px 14px rgba(91,63,140,.45))}
 .finale small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
 footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;color:var(--muted)}
@@ -358,7 +360,6 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
     </div>
     <h1 class="names"><span class="w n1"><span class="shimmer">Ștefana</span></span><span class="amp">&amp;</span><span class="w n2"><span class="shimmer">Octavian</span></span></h1>
     <p class="hero-date fade-up fu2">22 · 05 · 2027</p>
-    <p class="hero-sub fade-up fu3">Cununie civilă · Iași</p>
     <a class="scroll-hint fade-up fu4" href="#invitatie"><span class="mouse"></span>Derulează</a>
   </section>
 
@@ -368,7 +369,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
     <h2 class="title reveal">Vă invităm la cununia noastră civilă</h2>
     <div class="lead reveal" style="--d:.15s">
       <p>Pentru că cele mai frumoase momente sunt cele împărtășite cu cei dragi, vă invităm cu bucurie să fiți alături de noi în ziua în care ne unim destinele.</p>
-      <p>Ne vom spune „Da” în fața ofițerului de stare civilă, într-un cadru restrâns, și ne-am bucura nespus să sărbătorim apoi împreună cu voi.</p>    </div>
+      <p>Ne vom spune „Da” în fața ofițerului de stare civilă, iar apoi ne-am bucura nespus să sărbătorim alături de voi.</p>    </div>
   </section>
 
   <div class="divider reveal" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><circle cx="13" cy="17" r="1.6" fill="#b8975a"/><circle cx="20" cy="17" r="1" fill="#b8975a"/><use href="#heart" x="26" y="8" width="18" height="17" fill="url(#gHeart)"/><circle cx="50" cy="17" r="1" fill="#b8975a"/><circle cx="57" cy="17" r="1.6" fill="#b8975a"/></svg><span></span></div>
@@ -408,7 +409,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
       </div>
       <div class="ev reveal">
         <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#8e6bbf" stroke-width="2" stroke-linecap="round"><path d="M10 8h10l-1 11a4 4 0 0 1-8 0z"/><path d="M15 23v15M11 38h8"/><path d="M28 8h10l-1 11a4 4 0 0 1-8 0z" stroke="#b8975a"/><path d="M33 23v15M29 38h8" stroke="#b8975a"/><path d="M22 5l2-3M24 7l4-2" stroke="#b8975a"/></svg></div>
-        <div class="txt"><div class="time" data-ora="petrecere">16:00</div><h3>Petrecerea</h3><p>Restaurant Crystal, Sala Diamant<br>Ridicăm un pahar și ne bucurăm de o seară frumoasă împreună</p></div>
+        <div class="txt"><div class="time" data-ora="petrecere">16:00</div><h3>Petrecerea</h3><p>Restaurant Crystal, Sala Diamant<br>O seară de sărbătoare alături de cei dragi</p></div>
       </div>
     </div>
   </section>
@@ -424,7 +425,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
         <h3>Primăria Lețcani</h3>
         <p class="where">Lețcani, județul Iași</p>
         <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="cununie">14:30</span></p>
-        <div class="map"><iframe loading="lazy" title="Harta Primăria Lețcani" src="https://maps.google.com/maps?q=Prim%C4%83ria%20Le%C8%9Bcani%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="map"><iframe title="Harta Primăria Lețcani" src="https://maps.google.com/maps?q=Prim%C4%83ria%20Le%C8%9Bcani%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="acts">
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Prim%C4%83ria%20Le%C8%9Bcani%2C%20Ia%C8%99i"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Google Maps</a>
           <a class="btn ghost" target="_blank" rel="noopener" href="https://waze.com/ul?q=Primaria%20Letcani%20Iasi&navigate=yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15c-1.5-6 3-11 9-11s9 4 8 9c-.6 3-3 5-6 5H9c-2 0-4-1-5-3z"/><circle cx="9" cy="20" r="1.6"/><circle cx="16" cy="20" r="1.6"/><circle cx="10" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg>Waze</a>
@@ -436,7 +437,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
         <h3>Restaurant Crystal</h3>
         <p class="where">Sala Diamant · Valea Lupului, județul Iași</p>
         <p class="when">Sâmbătă, 22 mai 2027 · ora <span data-ora="petrecere">16:00</span></p>
-        <div class="map"><iframe loading="lazy" title="Harta Restaurant Crystal" src="https://maps.google.com/maps?q=Restaurant%20Crystal%2C%20Valea%20Lupului%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="map"><iframe title="Harta Restaurant Crystal" src="https://maps.google.com/maps?q=Restaurant%20Crystal%2C%20Valea%20Lupului%2C%20Ia%C8%99i&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="acts">
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Crystal%2C%20Valea%20Lupului%2C%20Ia%C8%99i"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Google Maps</a>
           <a class="btn ghost" target="_blank" rel="noopener" href="https://waze.com/ul?q=Restaurant%20Crystal%20Valea%20Lupului&navigate=yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15c-1.5-6 3-11 9-11s9 4 8 9c-.6 3-3 5-6 5H9c-2 0-4-1-5-3z"/><circle cx="9" cy="20" r="1.6"/><circle cx="16" cy="20" r="1.6"/><circle cx="10" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg>Waze</a>
@@ -446,17 +447,15 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
   </section>
 
   <!-- Adaugă în calendar -->
-  <section class="save" id="calendar">
+  <section class="save" id="calendar" hidden>
     <p class="eyebrow reveal">Nu uitați</p>
     <h2 class="title reveal">Adăugați în calendar</h2>
     <p class="lead reveal">Ca să nu ratați niciun moment, salvați data în calendarul vostru.</p>
     <div class="acts reveal" style="--d:.15s">
-      <a class="btn" id="gcal1" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Google · Cununia</a>
-      <a class="btn" id="gcal2" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Google · Petrecerea</a>
-      <a class="btn ghost" href="assets/cununie.ics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>iPhone · Cununia</a>
-      <a class="btn ghost" href="assets/petrecere.ics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>iPhone · Petrecerea</a>
+      <a class="btn" data-os="android" id="gcal1" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Android · Cununia</a>
+      <a class="btn" data-os="android" id="gcal2" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Android · Petrecerea</a>
+      <a class="btn" data-os="ios" href="assets/calendar.ics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>iOS · Cununia și petrecerea</a>
     </div>
-    <p class="note" id="icsNote" hidden>Dacă nu s-a deschis Safari, copiați linkul, deschideți-l în Safari și apăsați din nou butonul iPhone.<br><button class="btn ghost" id="copyLink" type="button" style="margin-top:.8rem">Copiază linkul</button></p>
   </section>
 
   <!-- RSVP -->
@@ -506,13 +505,13 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
   </section>
 </main>
 
-<footer>CUNUNIA CIVILĂ · ȘTEFANA &amp; OCTAVIAN · 22.05.2027 · IAȘI</footer>
+<footer>CUNUNIA CIVILĂ · ȘTEFANA &amp; OCTAVIAN · 22.05.2027</footer>
 
 <button class="music" id="music" aria-label="Pornește sau oprește muzica"><i></i><i></i><i></i><i></i></button>
 
 <script>
 /* Datele de editat: orele, numerele de WhatsApp (cu prefixul țării, fără +) */
-// La schimbarea orelor, actualizează și assets/cununie.ics și assets/petrecere.ics (ora în UTC).
+// La schimbarea orelor, actualizează și assets/calendar.ics (ora în UTC).
 const CONFIG = {
   data: '2027-05-22',
   fus: '+03:00',
@@ -780,11 +779,13 @@ addEventListener('scroll', onScroll, { passive: true }); onScroll();
       + '&text=' + encodeURIComponent(c.titlu) + '&dates=' + fmt(s) + '/' + fmt(e)
       + '&location=' + encodeURIComponent(c.loc) + '&details=' + encodeURIComponent('Vă așteptăm cu drag! Ștefana & Octavian');
   });
-  // pe iPhone, în afara Safari (Messenger, Chrome...), deschide fișierul .ics în Safari
+  // doar pe telefon: webcal deschide Calendarul pe iOS din orice browser
   const ua = navigator.userAgent, ios = /iPhone|iPad|iPod/.test(ua) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
-  if (ios && (!/Safari\//.test(ua) || /CriOS|FxiOS|EdgiOS|FBAN|FBAV|Instagram/.test(ua)))
-    $$('a[href$=".ics"]').forEach(a => { a.href = 'x-safari-' + a.href; a.addEventListener('click', () => $('#icsNote').hidden = false); });
-  $('#copyLink').addEventListener('click', e => navigator.clipboard.writeText(location.origin + location.pathname).then(() => e.target.textContent = 'Copiat!'));
+  const os = ios ? 'ios' : /Android/.test(ua) ? 'android' : '';
+  if (!os) return;
+  $$('#calendar [data-os]').forEach(a => { if (a.dataset.os !== os) a.remove(); });
+  if (ios) { const a = $('#calendar [data-os=ios]'); a.href = a.href.replace(/^https?:/, 'webcal:'); }
+  $('#calendar').hidden = false;
 })();
 
 /* ---------- Confirmare pe WhatsApp ---------- */
