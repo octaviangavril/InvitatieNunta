@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Stefana si Octavian//Invitatie//RO
+METHOD:PUBLISH
+X-WR-CALNAME:Ștefana & Octavian
+X-WR-TIMEZONE:Europe/Bucharest
+BEGIN:VEVENT
+UID:cununie-stefana-octavian-2027@invitatie
+DTSTAMP:20261104T120000Z
+DTSTART:20270522T113000Z
+DTEND:20270522T123000Z
+SUMMARY:Cununia civilă Ștefana & Octavian
+LOCATION:Primăria Lețcani\, județul Iași
+DESCRIPTION:Vă așteptăm cu drag! Ștefana & Octavian
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Cununia civilă Ștefana & Octavian
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:petrecere-stefana-octavian-2027@invitatie
+DTSTAMP:20261104T120000Z
+DTSTART:20270522T130000Z
+DTEND:20270522T200000Z
+SUMMARY:Petrecerea Ștefana & Octavian
+LOCATION:Restaurant Crystal\, Sala Diamant\, Valea Lupului\, județul Iași
+DESCRIPTION:Vă așteptăm cu drag! Ștefana & Octavian
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Petrecerea Ștefana & Octavian
+END:VALARM
+END:VEVENT
+END:VCALENDAR
