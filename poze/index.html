@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pozele de la nuntă · Ștefana & Octavian</title>
-<meta name="description" content="Adăugați pozele și filmulețele de la nuntă în albumul Ștefanei și al lui Octavian.">
+<title>Ziua noastră, prin ochii voștri · Ștefana & Octavian</title>
+<meta name="description" content="Trimiteți-ne pozele și filmulețele de la cununie, direct din galerie.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%238e6bbf' d='M16 29S3 21 3 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 13 3.5C29 21 16 29 16 29z'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#8e6bbf">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +19,7 @@
   --sans:'Jost', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.6;overflow-x:hidden;font-variant-numeric:lining-nums}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
@@ -35,6 +36,7 @@ main{max-width:640px;margin:0 auto;padding:3rem 20px 1rem;text-align:center}
   font-family:var(--script);font-size:1.95rem;color:var(--lav-d);line-height:1;padding-top:.15em}
 .title{font-family:var(--script);font-weight:400;color:var(--lav-d);font-size:clamp(2.7rem,11vw,3.8rem);line-height:1.15;margin:0 0 .6rem}
 .lead{max-width:30em;margin:0 auto;font-size:1.2rem;text-wrap:balance}
+.nw{white-space:nowrap}
 .divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:1.2rem auto 0;max-width:320px}
 .divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .divider span:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
@@ -53,15 +55,18 @@ main{max-width:640px;margin:0 auto;padding:3rem 20px 1rem;text-align:center}
 .btn.ghost{background:#fff;color:var(--lav-d);border:1px solid var(--lav-m);box-shadow:none;padding:.6rem 1.2rem;min-width:140px}
 .btn.ghost::after{display:none}
 .btn svg{width:18px;height:18px;flex:none}
-#album{width:min(100%,380px);font-size:1rem;letter-spacing:.05em;line-height:1.35;padding:1.1rem 1.4rem}
-#album svg{width:26px;height:26px}
-.pasi{list-style:none;counter-reset:pas;margin:1.6rem auto 0;padding:0;max-width:26em;text-align:left;font-size:1.15rem;line-height:1.4}
-.pasi li{counter-increment:pas;display:flex;align-items:center;gap:14px;margin-top:.9rem}
-.ico{position:relative;flex:none;width:46px;height:46px;border-radius:50%;background:var(--lav-l);color:var(--lav-d);display:flex;align-items:center;justify-content:center}
-.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.ico::after{content:counter(pas);position:absolute;top:-4px;left:-4px;width:20px;height:20px;border-radius:50%;background:var(--gold);color:#fff;
-  font-family:var(--sans);font-size:.68rem;line-height:20px;text-align:center}
-.toti{margin:1.3rem 0 0;font-size:1.15rem;color:var(--lav-d);font-style:italic}
+.vh{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+#alege{width:min(100%,380px);font-size:1rem;letter-spacing:.05em;line-height:1.35;padding:1.1rem 1.4rem}
+#alege svg{width:26px;height:26px}
+#galerie:focus-visible+#inceput #alege{outline:2px solid var(--lav-d);outline-offset:3px}
+.bara{height:10px;margin:.6rem auto 0;max-width:380px;border-radius:999px;background:var(--lav-l);overflow:hidden}
+.bara div{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--lav-m),var(--lav));transition:width .3s ease}
+.stare{margin:1rem 0 0;font-size:1.2rem;color:var(--lav-d)}
+.multumim{font-family:var(--script);font-weight:400;color:var(--lav-d);font-size:2.6rem;line-height:1.2;margin:0}
+.primit{margin:.2rem 0 0;font-size:1.2rem}
+.netrimise{margin:1rem 0 0;color:var(--muted);overflow-wrap:anywhere}
+.netrimise.singur{color:var(--ink);font-size:1.2rem}
+.actiuni{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:1.3rem}
 .hint{font-size:1rem;color:var(--muted);margin:.8rem 0 0;text-wrap:balance}
 footer{max-width:640px;margin:0 auto;padding:1.5rem 20px calc(2rem + env(safe-area-inset-bottom,0px));text-align:center;font-size:1rem;color:var(--muted)}
 footer p{margin:0 0 .8rem;text-wrap:balance}
@@ -83,8 +88,6 @@ footer p{margin:0 0 .8rem;text-wrap:balance}
     <symbol id="heart" viewBox="0 0 32 30"><path d="M16 29S2 20.5 2 10.5C2 5.5 5.8 2 10 2c2.7 0 4.8 1.4 6 3.5C17.2 3.4 19.3 2 22 2c4.2 0 8 3.5 8 8.5C30 20.5 16 29 16 29z"/></symbol>
     <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></symbol>
     <symbol id="poza" viewBox="0 0 24 24"><rect x="2.5" y="6" width="14" height="14" rx="2.5"/><circle cx="7.5" cy="11" r="1.4"/><path d="m2.5 17 4-3.5 3 2.5 2.5-2 4.5 4M20 2.5v7M16.5 6h7"/></symbol>
-    <symbol id="deget" viewBox="0 0 24 24"><path d="M10 13V4.5a1.75 1.75 0 0 1 3.5 0V11m0-1.5a1.75 1.75 0 0 1 3.5 0V12m0-1a1.75 1.75 0 0 1 3.5 0v3a7.5 7.5 0 0 1-7.5 7.5h-1c-2.4 0-3.9-.9-5.2-2.3L3.7 16a1.8 1.8 0 0 1 2.6-2.5L10 17"/></symbol>
-    <symbol id="gata" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m7.5 12.3 3 3 6-6.6"/></symbol>
   </defs>
 </svg>
 <canvas id="fx" aria-hidden="true"></canvas>
@@ -92,26 +95,37 @@ footer p{margin:0 0 .8rem;text-wrap:balance}
 <main>
   <header>
     <div class="mono" aria-hidden="true">Ș&amp;O</div>
-    <h1 class="title">Pozele de la nuntă</h1>
-    <p class="lead">Ziua noastră, prin ochii voștri. Adăugați pozele și filmulețele voastre în albumul nostru.</p>
+    <h1 class="title">Ziua noastră,<br>prin ochii voștri</h1>
+    <p class="lead"><span class="nw">Trimiteți-ne</span> pozele și filmulețele voastre de la cununie, direct din galerie.</p>
     <div class="divider" aria-hidden="true"><span></span><svg viewBox="0 0 70 34"><circle cx="13" cy="17" r="1.6" fill="#b8975a"/><circle cx="20" cy="17" r="1" fill="#b8975a"/><use href="#heart" x="26" y="8" width="18" height="17" fill="url(#gHeart)"/><circle cx="50" cy="17" r="1" fill="#b8975a"/><circle cx="57" cy="17" r="1.6" fill="#b8975a"/></svg><span></span></div>
     <p class="data">22 mai 2027</p>
   </header>
 
-  <section class="card">
-    <a class="btn" id="album" href="#"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#poza"/></svg>Adaugă pozele în albumul nostru</a>
-    <ol class="pasi">
-      <li><span class="ico"><svg aria-hidden="true"><use href="#deget"/></svg></span><span>Apăsați butonul de mai sus.</span></li>
-      <li><span class="ico"><svg aria-hidden="true"><use href="#poza"/></svg></span><span>În album, apăsați iconița „Adaugă” (fotografia cu +).</span></li>
-      <li><span class="ico"><svg aria-hidden="true"><use href="#gata"/></svg></span><span>Alegeți pozele și filmulețele și confirmați.</span></li>
-    </ol>
-    <p class="toti">Vedeți acolo și pozele celorlalți invitați.</p>
-    <p class="hint">Dacă vi se cere conectarea, folosiți contul Google (Gmail).</p>
+  <section class="card" aria-live="polite">
+    <input class="vh" type="file" id="galerie" multiple accept="image/*,video/*">
+    <div id="inceput">
+      <label class="btn" id="alege" for="galerie"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#poza"/></svg>Alege pozele și filmulețele</label>
+      <p class="hint">Ajung direct la noi, în calitate originală. Nu aveți nevoie de cont.</p>
+    </div>
+    <div id="urcare" hidden>
+      <div class="bara" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="umplut"></div></div>
+      <p class="stare" id="stare"></p>
+      <p class="hint">Vă rugăm, nu închideți pagina până la final.</p>
+    </div>
+    <div id="final" hidden>
+      <h2 class="multumim" id="multumim">Mulțumim!</h2>
+      <p class="primit" id="primit"></p>
+      <p class="netrimise" id="netrimise"></p>
+      <div class="actiuni">
+        <button class="btn" id="reia" type="button">Reîncearcă</button>
+        <button class="btn ghost" id="inca" type="button">Mai trimit</button>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer>
-  <p>Nu aveți cont Google? Trimiteți-ne pozele pe WhatsApp:</p>
+  <p>Nu merge? Trimiteți-ne pozele pe WhatsApp:</p>
   <div class="wa-btns">
     <a class="btn ghost" data-to="mireasa" href="#"><svg aria-hidden="true"><use href="#wa" fill="currentColor"/></svg>Ștefana</a>
     <a class="btn ghost" data-to="mire" href="#"><svg aria-hidden="true"><use href="#wa" fill="currentColor"/></svg>Octavian</a>
@@ -119,17 +133,169 @@ footer p{margin:0 0 .8rem;text-wrap:balance}
 </footer>
 
 <script>
-const CONFIG = { album: 'https://photos.app.goo.gl/sXj7ZSYpyFBZhq1c6', whatsapp: { mireasa: '40786895272', mire: '40751370116' } };
+const CONFIG = {
+  script: 'https://script.google.com/macros/s/AKfycbyz_u-_m8uwA9bVA4o6qD7q9oKHLfZvdJ32aXROzHGjhyDc0t23rpKb1AtxiyhHVENlWg/exec',
+  whatsapp: { mireasa: '40786895272', mire: '40751370116' },
+  maxOcteti: 2147483648,
+  asteptare: 60000
+};
 
 const mob = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
 // pe telefon, în aceeași pagină, ca să preia aplicația; pe calculator, în tab nou
-function leaga(a, href) {
-  a.href = href;
+document.querySelectorAll('[data-to]').forEach(a => {
+  a.href = (mob ? 'whatsapp://send?phone=' : 'https://wa.me/') + CONFIG.whatsapp[a.dataset.to];
   if (!mob) { a.target = '_blank'; a.rel = 'noopener'; }
+});
+
+function acord(n) {
+  if (n === 1) return 'un fișier';
+  return n + (n % 100 >= 20 || (n && n % 100 === 0) ? ' de fișiere' : ' fișiere');
 }
-leaga(document.getElementById('album'), CONFIG.album);
-document.querySelectorAll('[data-to]').forEach(a =>
-  leaga(a, (mob ? 'whatsapp://send?phone=' : 'https://wa.me/') + CONFIG.whatsapp[a.dataset.to]));
+
+/* ---------- Urcarea în Google Drive ---------- */
+let ploaie = () => {};
+(() => {
+  const $ = id => document.getElementById(id), MiB = 1048576;
+  const pauza = ms => new Promise(r => setTimeout(r, ms));
+  let mod = '', urcam = false, primite = 0, netrimise = [], lacat = null;
+  const TIPURI = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', heic: 'image/heic', heif: 'image/heif', webp: 'image/webp', gif: 'image/gif',
+    mp4: 'video/mp4', m4v: 'video/x-m4v', mov: 'video/quicktime', '3gp': 'video/3gpp', webm: 'video/webm' };
+
+  // apel la script; un răspuns care nu e JSON contează ca eșec
+  async function apel(corp, ms = 120000) {
+    const c = new AbortController(), t = setTimeout(() => c.abort(), ms);
+    try {
+      const r = await fetch(CONFIG.script, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(corp), signal: c.signal });
+      const j = await r.json();
+      return j && typeof j === 'object' ? j : {};
+    } catch (e) { return {}; } finally { clearTimeout(t); }
+  }
+
+  // PUT direct în Drive; cod 0 = rețea sau CORS, trimis = au plecat octeți, oprit = l-a oprit pagina
+  function put(url, parte, start, total, prog) {
+    return new Promise(gata => {
+      const x = new XMLHttpRequest();
+      let t, trimis = false, oprit = false;
+      const paza = ms => { clearTimeout(t); t = setTimeout(() => { oprit = true; x.abort(); }, ms); };
+      x.open('PUT', url);
+      x.setRequestHeader('Content-Range', `bytes ${start}-${start + parte.size - 1}/${total}`);
+      x.upload.onprogress = e => { if (e.loaded) trimis = true; paza(CONFIG.asteptare); prog(e.loaded); };
+      x.upload.onload = () => paza(CONFIG.asteptare * 5); // Drive confirmă greu un fișier mare (5 min)
+      x.onloadend = () => { clearTimeout(t); gata({ cod: x.status, trimis, oprit }); };
+      paza(CONFIG.asteptare); x.send(parte);
+    });
+  }
+
+  const base64 = blob => new Promise((da, nu) => {
+    const r = new FileReader();
+    r.onload = () => da(r.result.slice(r.result.indexOf(',') + 1));
+    r.onerror = () => nu(r.error);
+    r.readAsDataURL(blob);
+  });
+
+  // o încercare cu sesiune nouă: 'gata', 'eroare' sau 'script' (CORS blocat, se trece pe script)
+  async function incearca({ f, tip }, prog) {
+    prog(0);
+    const s = await apel({ op: 'sesiune', nume: f.name, tip, marime: f.size });
+    if (!s.ok || typeof s.url !== 'string') return 'eroare';
+    const buc = (mod === 'script' ? 4 : 8) * MiB;
+    for (let start = 0; start < f.size; start += buc) {
+      const parte = f.slice(start, start + buc), fin = start + parte.size >= f.size;
+      let cod;
+      if (mod === 'script') {
+        let date;
+        try { date = await base64(parte); } catch (e) { return 'eroare'; }
+        const r = await apel({ op: 'bucata', url: s.url, start, total: f.size, date }, 300000);
+        cod = r.ok ? r.cod : 0;
+      } else {
+        const r = await put(s.url, parte, start, f.size, n => prog(start + n));
+        cod = r.cod;
+        if (!cod && !mod && !r.trimis && !r.oprit) { mod = 'script'; return 'script'; }
+        if (cod) mod = 'direct';
+      }
+      if (fin ? cod !== 200 && cod !== 201 : cod !== 308) return 'eroare';
+      prog(start + parte.size);
+    }
+    return 'gata';
+  }
+
+  async function urca(x, prog, eticheta) {
+    for (let i = 0; i < 3; i++) {
+      if (i) { prog(0); $('stare').textContent = 'Reîncerc…'; await pauza(i === 1 ? 2000 : 6000); }
+      $('stare').textContent = eticheta;
+      const r = await incearca(x, prog);
+      if (r === 'gata') return true;
+      if (r === 'script') i--;
+    }
+    return false;
+  }
+
+  async function treaz() {
+    try {
+      if (!urcam || lacat) return;
+      const l = await navigator.wakeLock.request('screen');
+      if (!urcam) return l.release();
+      lacat = l; l.onrelease = () => { lacat = null; };
+    } catch (e) {}
+  }
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') treaz(); });
+  addEventListener('beforeunload', e => { if (urcam) { e.preventDefault(); e.returnValue = ''; } });
+
+  const arata = id => ['inceput', 'urcare', 'final'].forEach(x => { $(x).hidden = x !== id; });
+
+  async function trimite(lista) {
+    const total = lista.reduce((t, x) => t + x.f.size, 0) || 1;
+    let facut = 0;
+    const bara = (n = 0) => {
+      const p = Math.min(100, Math.round((facut + n) / total * 100));
+      $('umplut').style.width = p + '%';
+      $('umplut').parentNode.setAttribute('aria-valuenow', p);
+    };
+    arata('urcare'); bara();
+    urcam = $('galerie').disabled = true; treaz();
+    for (let i = 0; i < lista.length; i++) {
+      let reusit = false;
+      try { reusit = await urca(lista[i], bara, `Se trimite ${i + 1} din ${lista.length}…`); } catch (e) {}
+      if (reusit) primite++; else netrimise.push(lista[i]);
+      facut += lista[i].f.size; bara();
+    }
+    urcam = $('galerie').disabled = false;
+    if (lacat) { lacat.release().catch(() => {}); lacat = null; }
+    final();
+  }
+
+  function final() {
+    $('multumim').hidden = $('primit').hidden = !primite;
+    $('primit').textContent = `Am primit ${acord(primite)}.`;
+    $('netrimise').hidden = !netrimise.length;
+    $('netrimise').classList.toggle('singur', !primite);
+    $('netrimise').textContent = `Nu s-${netrimise.length === 1 ? 'a' : 'au'} putut trimite: ` + netrimise.map(n => n.f.name + (n.motiv ? ` (${n.motiv})` : '')).join(', ') + '.';
+    $('reia').hidden = !netrimise.some(n => !n.motiv);
+    arata('final');
+    if (primite) ploaie();
+  }
+
+  $('galerie').addEventListener('change', e => {
+    const alese = [...e.target.files];
+    e.target.value = '';
+    if (!alese.length || urcam) return;
+    primite = 0; netrimise = [];
+    const lista = [];
+    for (const f of alese) {
+      const tip = f.type || TIPURI[f.name.split('.').pop().toLowerCase()] || '';
+      const motiv = !/^(image|video)\//.test(tip) ? 'nu e poză sau filmuleț'
+        : f.size > CONFIG.maxOcteti ? 'mai mare de 2 GB' : !f.size ? 'fișier gol' : '';
+      (motiv ? netrimise : lista).push({ f, tip, motiv });
+    }
+    if (lista.length) trimite(lista); else final();
+  });
+  $('reia').addEventListener('click', () => {
+    const lista = netrimise.filter(n => !n.motiv);
+    netrimise = netrimise.filter(n => n.motiv);
+    trimite(lista);
+  });
+  $('inca').addEventListener('click', () => arata('inceput'));
+})();
 
 /* ---------- Floricele de liliac care cad ---------- */
 (() => {
@@ -147,6 +313,7 @@ document.querySelectorAll('[data-to]').forEach(a =>
     a: rnd(0, 6.28), va: rnd(-.02, .02), sw: rnd(0, 6.28), fl: rnd(0, 6.28), c: COL[(Math.random() * COL.length) | 0] });
   const tinta = () => reduced ? 4 : (W < 600 ? 10 : 16);
   const petale = Array.from({ length: tinta() }, () => nou(false));
+  ploaie = () => { for (let i = 0; i < (reduced ? 0 : 40); i++) petale.push(Object.assign(nou(true), { vy: rnd(1.6, 3) })); };
   function cadru() {
     ctx.clearRect(0, 0, W, H);
     for (let i = petale.length - 1; i >= 0; i--) {
