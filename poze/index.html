@@ -137,7 +137,9 @@ const CONFIG = {
   script: 'https://script.google.com/macros/s/AKfycbyz_u-_m8uwA9bVA4o6qD7q9oKHLfZvdJ32aXROzHGjhyDc0t23rpKb1AtxiyhHVENlWg/exec',
   whatsapp: { mireasa: '40786895272', mire: '40751370116' },
   maxOcteti: 2147483648,
-  asteptare: 60000
+  asteptare: 60000,
+  paralel: 3,
+  lot: 10
 };
 
 const mob = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
@@ -157,18 +159,38 @@ let ploaie = () => {};
 (() => {
   const $ = id => document.getElementById(id), MiB = 1048576;
   const pauza = ms => new Promise(r => setTimeout(r, ms));
-  let mod = '', urcam = false, primite = 0, netrimise = [], lacat = null;
+  let mod = '', urcam = false, primite = 0, netrimise = [], lacat = null, coada = [];
   const TIPURI = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', heic: 'image/heic', heif: 'image/heif', webp: 'image/webp', gif: 'image/gif',
     mp4: 'video/mp4', m4v: 'video/x-m4v', mov: 'video/quicktime', '3gp': 'video/3gpp', webm: 'video/webm' };
 
-  // apel la script; un răspuns care nu e JSON contează ca eșec
-  async function apel(corp, ms = 120000) {
-    const c = new AbortController(), t = setTimeout(() => c.abort(), ms);
-    try {
-      const r = await fetch(CONFIG.script, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(corp), signal: c.signal });
-      const j = await r.json();
-      return j && typeof j === 'object' ? j : {};
-    } catch (e) { return {}; } finally { clearTimeout(t); }
+  fetch(CONFIG.script).catch(() => {}); // trezește scriptul cât se aleg pozele
+
+  // apel la script; rețeaua căzută, un răspuns care nu e JSON sau scriptul prea ocupat repetă apelul, cu pauze tot mai mari
+  async function apel(corp, ms = CONFIG.asteptare * 2) {
+    for (const s of [1, 2, 4, 8, 16, 30, 0]) {
+      const c = new AbortController(), t = setTimeout(() => c.abort(), ms);
+      let j = null;
+      try {
+        const r = await fetch(CONFIG.script, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(corp), signal: c.signal });
+        j = await r.json();
+      } catch (e) {} finally { clearTimeout(t); }
+      if (c.signal.aborted) return {}; // expirat: încercare eșuată a fișierului, nu se repetă
+      if (j && typeof j === 'object' && !(j.ok === false && /[Tt]oo many|invoked|Service/.test(j.eroare))) return j;
+      if (s) await pauza(s * (700 + Math.random() * 600));
+    }
+    return {};
+  }
+
+  // sesiunea lui x; lipsind, se cere un lot pentru x și următoarele fișiere din coadă fără sesiune
+  function sesiune(x) {
+    if (!x.s) {
+      const lot = [x, ...coada.filter(y => !y.s).slice(0, CONFIG.lot - 1)];
+      const r = apel({ op: 'sesiuni', fisiere: lot.map(y => ({ nume: y.f.name, tip: y.tip, marime: y.f.size })) });
+      lot.forEach((y, k) => { y.s = r.then(j => (j.rezultate || [])[k] || {}); });
+    }
+    const s = x.s;
+    x.s = null; // o reîncercare primește sesiune nouă
+    return s;
   }
 
   // PUT direct în Drive; cod 0 = rețea sau CORS, trimis = au plecat octeți, oprit = l-a oprit pagina
@@ -194,24 +216,26 @@ let ploaie = () => {};
   });
 
   // o încercare cu sesiune nouă: 'gata', 'eroare' sau 'script' (CORS blocat, se trece pe script)
-  async function incearca({ f, tip }, prog) {
+  async function incearca(x, prog) {
+    const f = x.f;
     prog(0);
-    const s = await apel({ op: 'sesiune', nume: f.name, tip, marime: f.size });
+    const s = await sesiune(x);
     if (!s.ok || typeof s.url !== 'string') return 'eroare';
-    const buc = (mod === 'script' ? 4 : 8) * MiB;
+    const prin = mod === 'script', buc = (prin ? 4 : 16) * MiB;
     for (let start = 0; start < f.size; start += buc) {
       const parte = f.slice(start, start + buc), fin = start + parte.size >= f.size;
       let cod;
-      if (mod === 'script') {
+      if (prin) {
         let date;
         try { date = await base64(parte); } catch (e) { return 'eroare'; }
-        const r = await apel({ op: 'bucata', url: s.url, start, total: f.size, date }, 300000);
+        const r = await apel({ op: 'bucata', url: s.url, start, total: f.size, date }, CONFIG.asteptare * 5);
         cod = r.ok ? r.cod : 0;
       } else {
         const r = await put(s.url, parte, start, f.size, n => prog(start + n));
         cod = r.cod;
-        if (!cod && !mod && !r.trimis && !r.oprit) { mod = 'script'; return 'script'; }
-        if (cod) mod = 'direct';
+        // CORS blocat aici sau găsit între timp de alt fișier: se reia prin script, fără să conteze ca eșec
+        if (!cod && (mod === 'script' || (!mod && !r.trimis && !r.oprit))) { mod = 'script'; return 'script'; }
+        if (cod && !mod) mod = 'direct';
       }
       if (fin ? cod !== 200 && cod !== 201 : cod !== 308) return 'eroare';
       prog(start + parte.size);
@@ -219,10 +243,9 @@ let ploaie = () => {};
     return 'gata';
   }
 
-  async function urca(x, prog, eticheta) {
+  async function urca(x, prog, stare) {
     for (let i = 0; i < 3; i++) {
-      if (i) { prog(0); $('stare').textContent = 'Reîncerc…'; await pauza(i === 1 ? 2000 : 6000); }
-      $('stare').textContent = eticheta;
+      if (i) { prog(0); stare(1); await pauza(i === 1 ? 2000 : 6000); stare(-1); }
       const r = await incearca(x, prog);
       if (r === 'gata') return true;
       if (r === 'script') i--;
@@ -245,20 +268,29 @@ let ploaie = () => {};
 
   async function trimite(lista) {
     const total = lista.reduce((t, x) => t + x.f.size, 0) || 1;
-    let facut = 0;
-    const bara = (n = 0) => {
-      const p = Math.min(100, Math.round((facut + n) / total * 100));
+    let gata = 0, reiau = 0;
+    lista.forEach(x => { x.n = 0; });
+    const bara = () => {
+      const p = Math.min(100, Math.round(lista.reduce((t, x) => t + x.n, 0) / total * 100));
       $('umplut').style.width = p + '%';
       $('umplut').parentNode.setAttribute('aria-valuenow', p);
     };
-    arata('urcare'); bara();
+    const stare = (d = 0) => {
+      reiau += d;
+      $('stare').textContent = reiau ? 'Reîncerc…' : `Se trimit fișierele… ${gata} din ${lista.length} gata`;
+    };
+    arata('urcare'); bara(); stare();
     urcam = $('galerie').disabled = true; treaz();
-    for (let i = 0; i < lista.length; i++) {
-      let reusit = false;
-      try { reusit = await urca(lista[i], bara, `Se trimite ${i + 1} din ${lista.length}…`); } catch (e) {}
-      if (reusit) primite++; else netrimise.push(lista[i]);
-      facut += lista[i].f.size; bara();
-    }
+    coada = lista.slice();
+    // CONFIG.paralel fișiere deodată, fiecare cu octeții lui în bara comună
+    await Promise.all(Array.from({ length: CONFIG.paralel }, async () => {
+      for (let x; (x = coada.shift()); ) {
+        let reusit = false;
+        try { reusit = await urca(x, n => { x.n = n; bara(); }, stare); } catch (e) {}
+        if (reusit) primite++; else netrimise.push(x);
+        x.n = x.f.size; gata++; bara(); stare();
+      }
+    }));
     urcam = $('galerie').disabled = false;
     if (lacat) { lacat.release().catch(() => {}); lacat = null; }
     final();
