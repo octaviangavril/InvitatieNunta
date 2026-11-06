@@ -576,8 +576,9 @@ function drawStar(x, y, r) {
   for (let i = 0; i < 8; i++) { const rr = i % 2 ? r * .3 : r, an = i * Math.PI / 4; ctx.lineTo(x + Math.cos(an) * rr, y + Math.sin(an) * rr); }
   ctx.closePath(); ctx.fill();
 }
-let running = true;
+let raf = 0;
 function frame() {
+  raf = 0;
   ctx.clearRect(0, 0, W, H);
   const t = performance.now() / 1000;
   for (let i = petals.length - 1; i >= 0; i--) {
@@ -608,10 +609,11 @@ function frame() {
     ctx.restore();
   }
   ctx.globalAlpha = 1;
-  if (running) requestAnimationFrame(frame);
+  if (!document.hidden) raf = requestAnimationFrame(frame);
 }
-requestAnimationFrame(frame);
-document.addEventListener('visibilitychange', () => { const r = !document.hidden; if (r && !running) { running = true; requestAnimationFrame(frame); } else running = r; });
+raf = requestAnimationFrame(frame);
+// o singură buclă: la revenire pornește doar dacă nu e deja un cadru programat
+document.addEventListener('visibilitychange', () => { if (!document.hidden && !raf) raf = requestAnimationFrame(frame); });
 if (matchMedia('(pointer:fine)').matches && !reduced) {
   let last = 0;
   addEventListener('pointermove', e => { const n = performance.now(); if (n - last > 40) { last = n; spark(e.clientX, e.clientY, false); } });
