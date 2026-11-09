@@ -117,9 +117,9 @@ section{position:relative;padding:5.5rem 20px;max-width:980px;margin:0 auto}
 .btn svg{width:18px;height:18px;flex:none}
 
 /* ---------- Hero ---------- */
-.hero{min-height:100svh;max-width:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4.5rem 20px 9rem;overflow:hidden}
-.kicker{font-family:var(--sans);letter-spacing:.45em;text-transform:uppercase;font-size:.78rem;color:var(--lav-d);margin:0 0 1.6rem}
-.arch-wrap{position:relative;width:min(74vw,350px);aspect-ratio:3/4;margin:0 auto}
+.hero{--nf:clamp(3.4rem,15vw,6rem);min-height:100svh;max-width:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 20px 5.4rem;overflow:hidden}
+.kicker{font-family:var(--sans);letter-spacing:.45em;text-transform:uppercase;font-size:.78rem;color:var(--lav-d);margin:0 0 1.3rem}
+.arch-wrap{position:relative;width:clamp(140px,(100svh - 15.8rem - 2.9*var(--nf))*.75,min(74vw,350px));aspect-ratio:3/4;margin:0 auto}
 .arch{position:absolute;inset:0;border-radius:999px 999px 16px 16px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(70,40,110,.6)}
 .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0) 60%,rgba(91,63,140,.25))}
@@ -137,7 +137,7 @@ section{position:relative;padding:5.5rem 20px;max-width:980px;margin:0 auto}
 .bouquet.l{left:-44px;--r:-18deg}
 .bouquet.r{right:-44px;--r:18deg;animation-delay:-2.5s}
 @keyframes sway{0%,100%{transform:rotate(calc(var(--r) - 3deg))}50%{transform:rotate(calc(var(--r) + 3deg))}}
-.names{margin:2.2rem 0 .4rem;font-family:var(--script);font-weight:400;line-height:1;font-size:clamp(3.4rem,15vw,6rem);color:var(--lav-d)}
+.names{margin:2.2rem 0 .4rem;font-family:var(--script);font-weight:400;line-height:1;font-size:var(--nf);color:var(--lav-d)}
 .names span{display:block}
 .names .w{clip-path:inset(-60% 100% -60% -20%);transition:clip-path 2.2s cubic-bezier(.6,.1,.3,1)}
 .names .amp{font-size:.6em;color:var(--gold);opacity:0;transform:scale(.4) rotate(-20deg);transition:all 1s cubic-bezier(.3,1.6,.5,1) 1.6s;margin:.3em 0 .2em}
@@ -157,11 +157,10 @@ section{position:relative;padding:5.5rem 20px;max-width:980px;margin:0 auto}
 .floating{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
 .floating i{position:absolute;bottom:-40px;font-style:normal;color:var(--lav-m);animation:rise linear infinite;opacity:0}
 @keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.8}100%{transform:translateY(-110vh) rotate(40deg);opacity:0}}
-.scroll-hint{margin-top:1.8rem;display:flex;flex-direction:column;align-items:center;gap:6px;
-  font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--lav-d);text-decoration:none}
-.mouse{width:24px;height:38px;border:1.5px solid var(--lav-d);border-radius:14px;position:relative}
-.mouse::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--lav-d);animation:wheel 1.8s ease infinite}
-@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.scroll-hint{position:absolute;left:0;right:0;bottom:calc(1rem + env(safe-area-inset-bottom,0px));width:max-content;margin:auto;display:flex;flex-direction:column;align-items:center;padding:.5rem 1.1rem .2rem;
+  border-radius:999px;background:rgba(255,253,249,.88);box-shadow:0 4px 14px -6px rgba(70,40,110,.35);font-family:var(--sans);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lav-d);text-decoration:none}
+.scroll-hint svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:none}50%{transform:translateY(6px)}}
 
 /* ---------- Invitația ---------- */
 .invite .lead p{margin:0 0 1.1rem}
@@ -360,7 +359,7 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
     </div>
     <h1 class="names"><span class="w n1"><span class="shimmer">Ștefana</span></span><span class="amp">&amp;</span><span class="w n2"><span class="shimmer">Octavian</span></span></h1>
     <p class="hero-date fade-up fu2">22 · 05 · 2027</p>
-    <a class="scroll-hint fade-up fu4" href="#invitatie"><span class="mouse"></span>Derulează</a>
+    <a class="scroll-hint fade-up fu3" href="#invitatie">Derulați în jos<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
   </section>
 
   <!-- Invitația -->
