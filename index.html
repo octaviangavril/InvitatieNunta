@@ -129,7 +129,7 @@ section{position:relative;padding:5.5rem 20px;max-width:980px;margin:0 auto}
 .opened .arch-line path.main{animation:draw 3.2s ease forwards .6s}
 .opened .arch-line path.thin{opacity:1}
 @keyframes draw{to{stroke-dashoffset:0}}
-.badge{position:absolute;right:-30px;top:12%;width:108px;height:108px;animation:spin 22s linear infinite}
+.badge{position:absolute;right:-14%;top:-1%;width:clamp(66px,32%,108px);height:auto;aspect-ratio:1;animation:spin 22s linear infinite}
 .badge text{font-family:var(--sans);font-size:9.6px;letter-spacing:2.6px;fill:var(--lav-d)}
 .badge .heart{font-size:26px;fill:var(--lav);letter-spacing:0}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -273,7 +273,6 @@ footer{text-align:center;padding:1.5rem 20px 2.5rem;font-family:var(--sans);font
 @media (max-width:600px){
   body{font-size:18px}
   section{padding:4.2rem 18px}
-  .badge{width:86px;height:86px;right:-18px}
   .bouquet{width:84px;height:96px}.bouquet.l{left:-26px}.bouquet.r{right:-26px}
   .tl::before,.tl .fill{left:32px}
   .ev{grid-template-columns:64px 1fr}
